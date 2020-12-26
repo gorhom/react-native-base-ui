@@ -33,7 +33,9 @@
     "build": "bob build && yarn copy-dts",
     "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib/typescript",
     "release": "release-it",
-    "bootstrap": "cd ./example && yarn"
+    "bootstrap": "cd ./storybook && yarn",
+    "start": "cd ./storybook && yarn start",
+    "storybook": "cd ./storybook && yarn storybook"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",

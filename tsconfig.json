@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@gorhom/base-ui": ["./src/index"]
+      "@gorhom/base-ui": ["./src"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
