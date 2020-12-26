@@ -1,5 +1,14 @@
-import { configure, getStorybookUI } from '@storybook/react-native';
+import {
+  addDecorator,
+  configure,
+  getStorybookUI,
+} from '@storybook/react-native';
 import { registerRootComponent } from 'expo';
+import { withThemeProvider } from './decorators/withThemeProvider';
+import { withCenterView } from './decorators/withCenterView';
+
+addDecorator(withThemeProvider);
+addDecorator(withCenterView);
 
 configure(() => {
   // Since require.context doesn't exist in metro bundler world, we have to

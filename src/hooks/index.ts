@@ -1,0 +1,1 @@
+export { useThemedStyle } from './useThemedStyle';
