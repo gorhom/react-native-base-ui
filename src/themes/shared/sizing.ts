@@ -1,0 +1,26 @@
+import type { Sizing } from '../types';
+
+export const sizing: Sizing = {
+  scale0: 2,
+  scale100: 4,
+  scale200: 6,
+  scale300: 8,
+  scale400: 10,
+  scale500: 12,
+  scale550: 14,
+  scale600: 16,
+  scale650: 18,
+  scale700: 20,
+  scale750: 22,
+  scale800: 24,
+  scale850: 28,
+  scale900: 32,
+  scale950: 36,
+  scale1000: 40,
+  scale1200: 48,
+  scale1400: 56,
+  scale1600: 64,
+  scale2400: 96,
+  scale3200: 128,
+  scale4800: 192,
+};
