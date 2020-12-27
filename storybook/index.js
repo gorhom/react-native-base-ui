@@ -9,8 +9,8 @@ import { withCenterView } from './decorators/withCenterView';
 import { withKnobs } from '@storybook/addon-knobs';
 
 // add decorators
-addDecorator(withThemeProvider);
 addDecorator(withCenterView);
+addDecorator(withThemeProvider);
 addDecorator(withKnobs);
 
 configure(() => {

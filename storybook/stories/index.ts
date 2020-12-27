@@ -1,2 +1,2 @@
-import '../../src/components/button/Button.stories';
-import '../../src/components/typography/Typography.stories';
+import '../../src/button/Button.stories';
+import '../../src/typography/Typography.stories';
