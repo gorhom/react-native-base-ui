@@ -31,18 +31,18 @@ export const borders: Borders = {
     borderStyle: 'solid',
     borderWidth: 1,
   },
-  radius100: '2px',
-  radius200: '4px',
-  radius300: '8px',
-  radius400: '12px',
+  radius100: 2,
+  radius200: 4,
+  radius300: 8,
+  radius400: 12,
   /** Datepicker (Range), Progress Bar, Slider, Tag */
   useRoundedCorners: true,
   /** Button, ButtonGroup */
-  buttonBorderRadius: '0px',
+  buttonBorderRadius: 0,
   /** Input, Select, Textarea, Checkbox */
-  inputBorderRadius: '0px',
+  inputBorderRadius: 0,
   /** Popover, Menu, Tooltip */
-  popoverBorderRadius: '0px',
+  popoverBorderRadius: 0,
   /** Card, Datepicker, Modal, Toast, Notification */
-  surfaceBorderRadius: '0px',
+  surfaceBorderRadius: 0,
 };

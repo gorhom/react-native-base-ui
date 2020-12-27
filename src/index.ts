@@ -8,4 +8,7 @@ export { useThemedStyle } from './hooks';
 export { DarkTheme, createDarkTheme, createStyles } from './themes';
 
 // types
-export type { Theme, NamedStyles } from './themes';
+export type { Theme } from './themes';
+
+// components
+export { Button } from './components/button';

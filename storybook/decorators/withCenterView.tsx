@@ -7,13 +7,12 @@ const styleCreator = createStyles(theme => ({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: theme.colors.accent,
+    backgroundColor: theme.colors.backgroundPrimary,
   },
 }));
 
 const CenterView = ({ children }) => {
   const styles = useThemedStyle(styleCreator);
-
   return <View style={styles.container}>{children}</View>;
 };
 

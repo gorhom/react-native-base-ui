@@ -1,23 +1,24 @@
 enum KIND {
-  primary = 0,
-  secondary,
-  tertiary,
-  minimal,
+  primary = 'primary',
+  secondary = 'secondary',
+  tertiary = 'tertiary',
+  minimal = 'minimal',
 }
 
 enum SHAPE {
-  default = 0,
-  pill,
-  round,
-  circle,
-  square,
+  default = 'default',
+  pill = 'pill',
+  // @todo, maybe delete this one
+  round = 'round',
+  circle = 'circle',
+  square = 'square',
 }
 
 enum SIZE {
-  default = 0,
-  mini,
-  compact,
-  large,
+  default = 'default',
+  large = 'large',
+  compact = 'compact',
+  mini = 'mini',
 }
 
 export { KIND, SHAPE, SIZE };

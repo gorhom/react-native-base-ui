@@ -12,6 +12,7 @@ export const stylesCreator = createStyles(
     disabled: boolean
   ) => ({
     container: {
+      flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
       ...getBorderRadiusStyles(theme, shape, size),
@@ -85,21 +86,21 @@ const getShapeStyles = (theme: Theme, shape: SHAPE, size: SIZE) => {
     let height, width;
     switch (size) {
       case SIZE.mini:
-        height = '28px';
-        width = '28px';
+        height = 28;
+        width = 28;
         break;
       case SIZE.compact:
-        height = '36px';
-        width = '36px';
+        height = 36;
+        width = 36;
         break;
       case SIZE.large:
-        height = '56px';
-        width = '56px';
+        height = 56;
+        width = 56;
         break;
       case SIZE.default:
       default:
-        height = '48px';
-        width = '48px';
+        height = 48;
+        width = 48;
         break;
     }
     return {
