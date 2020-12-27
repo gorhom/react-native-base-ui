@@ -164,15 +164,15 @@ export interface Borders {
   border400: Border;
   border500: Border;
   border600: Border;
-  radius100: string;
-  radius200: string;
-  radius300: string;
-  radius400: string;
+  radius100: number;
+  radius200: number;
+  radius300: number;
+  radius400: number;
   useRoundedCorners: boolean;
-  buttonBorderRadius: string;
-  surfaceBorderRadius: string;
-  inputBorderRadius: string;
-  popoverBorderRadius: string;
+  buttonBorderRadius: number;
+  surfaceBorderRadius: number;
+  inputBorderRadius: number;
+  popoverBorderRadius: number;
 }
 
 export interface ComponentColorTokens {
