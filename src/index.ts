@@ -12,3 +12,4 @@ export type { Theme } from './themes';
 
 // components
 export { Button } from './components/button';
+export * from './components/typography';
