@@ -77,21 +77,22 @@ export interface ColorTokens {
   rating400: string;
 }
 
-export interface CoreSemanticColorTokens {
-  // Background
-  backgroundPrimary: string;
-  backgroundSecondary: string;
-  backgroundTertiary: string;
-  backgroundInversePrimary: string;
-  backgroundInverseSecondary: string;
-
-  // Content
+export interface CoreContentColorTokens {
   contentPrimary: string;
   contentSecondary: string;
   contentTertiary: string;
   contentInversePrimary: string;
   contentInverseSecondary: string;
   contentInverseTertiary: string;
+}
+
+export interface CoreSemanticColorTokens extends CoreContentColorTokens {
+  // Background
+  backgroundPrimary: string;
+  backgroundSecondary: string;
+  backgroundTertiary: string;
+  backgroundInversePrimary: string;
+  backgroundInverseSecondary: string;
 
   // Border
   borderOpaque: string;
@@ -221,7 +222,19 @@ export interface FontTokens {
 
 export type Font = {
   fontFamily: string;
-  fontWeight: 'bold' | 'normal' | 'bolder' | 'lighter' | number;
+  fontWeight:
+    | 'bold'
+    | 'normal'
+    | 'bolder'
+    | 'lighter'
+    | '100'
+    | '200'
+    | '300'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900';
   fontSize: number;
   lineHeight: number;
 };
@@ -264,25 +277,6 @@ export interface Typography {
   DisplaySmall: Font;
   DisplayMedium: Font;
   DisplayLarge: Font;
-
-  MonoParagraphXSmall: Font;
-  MonoParagraphSmall: Font;
-  MonoParagraphMedium: Font;
-  MonoParagraphLarge: Font;
-  MonoLabelXSmall: Font;
-  MonoLabelSmall: Font;
-  MonoLabelMedium: Font;
-  MonoLabelLarge: Font;
-  MonoHeadingXSmall: Font;
-  MonoHeadingSmall: Font;
-  MonoHeadingMedium: Font;
-  MonoHeadingLarge: Font;
-  MonoHeadingXLarge: Font;
-  MonoHeadingXXLarge: Font;
-  MonoDisplayXSmall: Font;
-  MonoDisplaySmall: Font;
-  MonoDisplayMedium: Font;
-  MonoDisplayLarge: Font;
 }
 
 export interface Sizing {
