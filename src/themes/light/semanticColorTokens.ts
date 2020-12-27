@@ -14,62 +14,61 @@ export const getSemanticColorTokens = (
   const core: CoreSemanticColorTokens = {
     // Background
     backgroundPrimary: foundation.primaryB,
-    backgroundSecondary: colors.gray800,
-    backgroundTertiary: colors.gray700,
+    backgroundSecondary: colors.gray50,
+    backgroundTertiary: colors.gray100,
     backgroundInversePrimary: foundation.primaryA,
-    backgroundInverseSecondary: colors.gray300,
+    backgroundInverseSecondary: colors.gray800,
 
     // Content
     contentPrimary: foundation.primaryA,
-    contentSecondary: colors.gray400,
+    contentSecondary: colors.gray600,
     contentTertiary: colors.gray500,
     contentInversePrimary: foundation.primaryB,
-    contentInverseSecondary: colors.gray600,
-    contentInverseTertiary: colors.gray500,
+    contentInverseSecondary: colors.gray300,
+    contentInverseTertiary: colors.gray400,
 
     // Border
-    borderOpaque: colors.gray700,
+    borderOpaque: colors.gray200,
     borderTransparent: hexToRgba(foundation.primaryA, '0.08'),
     borderSelected: foundation.primaryA,
-    borderInverseOpaque: colors.gray400,
+    borderInverseOpaque: colors.gray700,
     borderInverseTransparent: hexToRgba(foundation.primaryB, '0.2'),
     borderInverseSelected: foundation.primaryB,
   };
 
   const coreExtensions: CoreExtensionSemanticColorTokens = {
     // Backgrounds
-    backgroundStateDisabled: colors.gray800,
+    backgroundStateDisabled: colors.gray50,
     backgroundOverlayDark: hexToRgba(colors.black, '0.3'),
     backgroundOverlayLight: hexToRgba(colors.black, '0.08'),
     backgroundAccent: foundation.accent,
     backgroundNegative: foundation.negative,
     backgroundWarning: foundation.warning,
     backgroundPositive: foundation.positive,
-    backgroundLightAccent: colors.blue700,
-    backgroundLightPositive: colors.green700,
-    backgroundLightNegative: colors.red700,
-    backgroundLightWarning: colors.yellow700,
-    backgroundAlwaysDark: colors.gray900,
-    backgroundAlwaysLight: colors.gray100,
+    backgroundLightAccent: colors.blue50,
+    backgroundLightNegative: colors.red50,
+    backgroundLightWarning: colors.yellow50,
+    backgroundLightPositive: colors.green50,
+    backgroundAlwaysDark: colors.black,
+    backgroundAlwaysLight: colors.white,
 
     // Content
-    contentStateDisabled: colors.gray600,
-    contentAccent: colors.blue300,
-    contentOnColor: colors.gray100,
-    contentOnColorInverse: colors.gray900,
-    contentNegative: colors.red300,
-    contentWarning: colors.yellow300,
-    contentPositive: colors.green300,
+    contentStateDisabled: colors.gray400,
+    contentAccent: foundation.accent,
+    contentOnColor: colors.white,
+    contentOnColorInverse: colors.black,
+    contentNegative: foundation.negative,
+    contentWarning: colors.yellow500,
+    contentPositive: foundation.positive,
 
     // Border
-    borderStateDisabled: colors.gray800,
+    borderStateDisabled: colors.gray50,
     borderAccent: colors.blue400,
-    borderAccentLight: colors.blue500,
-    borderNegative: colors.red500,
-    borderWarning: colors.yellow500,
-    borderPositive: colors.green500,
+    borderAccentLight: colors.blue200,
+    borderNegative: colors.red200,
+    borderWarning: colors.yellow200,
+    borderPositive: colors.green200,
   };
-
   return {
     ...core,
     ...coreExtensions,

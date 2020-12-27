@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { useThemedStyle } from '@gorhom/base-ui';
-import { Enhancer } from '../enhancer';
+import Enhancer from '../enhancer';
 import { stylesCreator } from './styles';
 
 import type { ButtonProps } from './types';
 import { KIND, SHAPE, SIZE } from './constants';
 
 const Button = ({
+  style,
   // presets
   kind = KIND.primary,
   size = SIZE.default,
@@ -33,9 +34,13 @@ const Button = ({
     isSelected,
     disabled
   );
+  const containerStyle = useMemo(() => [styles.container, style], [
+    styles.container,
+    style,
+  ]);
   //#endregion
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity style={containerStyle} onPress={onPress}>
       <>
         <Enhancer position="start" component={startEnhancer} />
         {children}

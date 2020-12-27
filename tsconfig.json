@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@gorhom/base-ui": ["./src"],
+      "@gorhom/base-ui/*": ["./src/*"],
       "@storybook/*": ["./storybook/node_modules/@storybook/*"]
     },
     "allowUnreachableCode": false,
