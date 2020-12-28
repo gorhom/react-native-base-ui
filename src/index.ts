@@ -5,11 +5,15 @@ export { default as ThemeProvider } from './providers/theme';
 export { useThemedStyle } from './hooks';
 
 // utilities
-export { DarkTheme, createDarkTheme, createStyles } from './themes';
+export {
+  DarkTheme,
+  createDarkTheme,
+  LightTheme,
+  createLightTheme,
+  createStyles,
+} from './themes';
 
 // types
 export type { Theme } from './themes';
 
 // components
-export { Button } from './components/button';
-export * from './components/typography';

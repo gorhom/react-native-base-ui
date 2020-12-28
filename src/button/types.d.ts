@@ -1,8 +1,8 @@
 import type { FC, ReactNode } from 'react';
+import type { StyleProp, ViewStyle } from 'react-native';
 import type { KIND, SHAPE, SIZE } from './constants';
 
 export interface ButtonProps {
-  children?: ReactNode;
   /**
    * Defines the kind (purpose) of a button.
    * @default KIND.primary
@@ -46,10 +46,22 @@ export interface ButtonProps {
    */
   endEnhancer?: ReactNode | FC;
 
+  /**
+   * Button content.
+   * @default null
+   */
+  children?: ReactNode | ReactNode[] | string;
+
+  style?: StyleProp<ViewStyle>;
   // callbacks
   /**
    * An action to be fired when button is pressed.
    * @default undefined
    */
   onPress?: () => void;
+}
+
+export interface ButtonContentProps {
+  style?: StyleProp<ViewStyle>;
+  children?: ReactNode;
 }
