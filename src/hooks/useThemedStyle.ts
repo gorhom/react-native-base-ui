@@ -1,6 +1,6 @@
-import { useContext, useMemo } from 'react';
+import { useMemo } from 'react';
+import { useTheme } from './useTheme';
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
-import { ThemeContext } from '../contexts';
 import type { Theme } from '../themes';
 
 type NamedStyles<T> = { [P in keyof T]: ViewStyle | TextStyle | ImageStyle };
@@ -10,7 +10,7 @@ export const useThemedStyle = <T extends NamedStyles<T> | NamedStyles<any>>(
   ...args: any[]
 ): T | NamedStyles<T> => {
   //#region context
-  const theme = useContext(ThemeContext);
+  const theme = useTheme();
   //#endregion
 
   //#region variables

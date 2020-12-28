@@ -315,6 +315,8 @@ export interface Theme {
   typography: Typography;
 }
 
+export type Style = ViewStyle | TextStyle | ImageStyle;
+
 export type NamedStyles<T> = {
-  [P in keyof T]: ViewStyle | TextStyle | ImageStyle;
+  [P in keyof T]: Style;
 };

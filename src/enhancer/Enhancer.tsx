@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { useThemedStyle } from '@gorhom/base-ui';
 import { stylesCreator } from './styles';
@@ -6,11 +6,7 @@ import type { EnhancerProps } from './types';
 
 const Enhancer = ({ component: Component = null, position }: EnhancerProps) => {
   //#region styles
-  const styles = useThemedStyle(stylesCreator);
-  const containerStyle = useMemo(
-    () => (position === 'start' ? styles.startContainer : styles.endContainer),
-    [position, styles]
-  );
+  const styles = useThemedStyle(stylesCreator, position);
   //#endregion
 
   //#region render
@@ -19,11 +15,11 @@ const Enhancer = ({ component: Component = null, position }: EnhancerProps) => {
   }
 
   if (typeof Component === 'function') {
-    return <View style={containerStyle}>{Component({})}</View>;
+    return <View style={styles.container}>{Component({})}</View>;
   }
 
   if (typeof Component === 'object') {
-    return <View style={containerStyle}>{Component}</View>;
+    return <View style={styles.container}>{Component}</View>;
   }
   return null;
   //#endregion

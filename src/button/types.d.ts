@@ -1,8 +1,27 @@
 import type { FC, ReactNode } from 'react';
-import type { StyleProp, ViewStyle } from 'react-native';
+import type {
+  StyleProp,
+  TouchableOpacityProps,
+  ViewProps,
+  ViewStyle,
+} from 'react-native';
+import type { Override } from '../types';
 import type { KIND, SHAPE, SIZE } from './constants';
 
+export interface ButtonOverrides {
+  [key: string]: Override<any>;
+  baseButton?: Override<TouchableOpacityProps>;
+  content?: Override<ViewProps>;
+  startEnhancer?: Override;
+  endEnhancer?: Override;
+}
+
 export interface ButtonProps {
+  /**
+   * Defines the button overrides.
+   * @default undefined
+   */
+  overrides?: ButtonOverrides;
   /**
    * Defines the kind (purpose) of a button.
    * @default KIND.primary

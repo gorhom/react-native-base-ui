@@ -1,7 +1,8 @@
 import { createStyles, Theme } from '@gorhom/base-ui';
 import { KIND, SIZE, SHAPE } from './constants';
+import type { ButtonOverrides } from './types';
 
-export const stylesCreator = createStyles(
+export const stylesCreator = createStyles<ButtonOverrides>(
   (
     theme,
     kind: KIND,
@@ -11,7 +12,7 @@ export const stylesCreator = createStyles(
     isSelected: boolean,
     disabled: boolean
   ) => ({
-    container: {
+    baseButton: {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
@@ -26,6 +27,8 @@ export const stylesCreator = createStyles(
       lineHeight: getShapeStyles(theme, shape, size).height,
       textAlign: 'center',
     },
+    startEnhancer: {},
+    endEnhancer: {},
   })
 );
 

@@ -1,16 +1,16 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { TouchableOpacity } from 'react-native';
-import { useThemedStyle } from '@gorhom/base-ui';
 import Enhancer from '../enhancer';
 import ButtonContent from './ButtonContent';
+import { useThemedStyle, useOverrideComponent } from '../hooks';
 import { stylesCreator } from './styles';
 import { KIND, SHAPE, SIZE } from './constants';
 
 import type { ButtonProps } from './types';
 
 const Button = ({
-  style,
   // presets
+  overrides,
   kind = KIND.primary,
   size = SIZE.default,
   shape = SHAPE.default,
@@ -35,20 +35,49 @@ const Button = ({
     isSelected,
     disabled
   );
-  const containerStyle = useMemo(() => [styles.container, style], [
-    styles.container,
-    style,
-  ]);
   //#endregion
 
+  //#region components
+  const [BaseButton, BaseButtonProps] = useOverrideComponent(
+    TouchableOpacity,
+    styles.baseButton,
+    overrides?.baseButton
+  );
+
+  const [StartEnhancer, StartEnhancerProps] = useOverrideComponent(
+    Enhancer,
+    styles.startEnhancer,
+    overrides?.startEnhancer
+  );
+
+  const [EndEnhancer, EndEnhancerProps] = useOverrideComponent(
+    Enhancer,
+    styles.endEnhancer,
+    overrides?.endEnhancer
+  );
+
+  const [Content, ContentProps] = useOverrideComponent(
+    ButtonContent,
+    styles.content,
+    overrides?.content
+  );
+  //#endregion
   return (
-    <TouchableOpacity style={containerStyle} onPress={onPress}>
+    <BaseButton {...BaseButtonProps} onPress={onPress}>
       <>
-        <Enhancer position="start" component={startEnhancer} />
-        <ButtonContent children={children} style={styles.content} />
-        <Enhancer position="end" component={endEnhancer} />
+        <StartEnhancer
+          {...StartEnhancerProps}
+          position="start"
+          component={startEnhancer}
+        />
+        <Content {...ContentProps} children={children} />
+        <EndEnhancer
+          {...EndEnhancerProps}
+          position="end"
+          component={endEnhancer}
+        />
       </>
-    </TouchableOpacity>
+    </BaseButton>
   );
 };
 

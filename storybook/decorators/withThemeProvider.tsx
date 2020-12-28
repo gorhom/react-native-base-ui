@@ -27,7 +27,11 @@ const ThemeProviderContainer = ({ children }) => {
         {children}
         <Button
           shape={SHAPE.circle}
-          style={styles.button}
+          overrides={{
+            baseButton: {
+              style: styles.button,
+            },
+          }}
           onPress={handleToggleThemePress}
         >
           {toggleButtonText}
