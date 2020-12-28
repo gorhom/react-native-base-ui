@@ -6,6 +6,7 @@ import { optionsKnob, boolean } from '@storybook/addon-knobs';
 import Button from './Button';
 import { KIND, SHAPE, SIZE } from './constants';
 import type { ButtonProps } from './types';
+import type { Theme } from '../themes';
 
 const props = (): ButtonProps => ({
   kind: optionsKnob(
@@ -79,6 +80,27 @@ storiesOf('Button', module)
       {...props()}
       startEnhancer={DummyEnhancer}
       endEnhancer={DummyEnhancer}
+    >
+      <Text>Hello World</Text>
+    </Button>
+  ))
+  .add('with overrides', () => (
+    <Button
+      {...props()}
+      startEnhancer={DummyEnhancer}
+      endEnhancer={DummyEnhancer}
+      overrides={{
+        baseButton: {
+          style: (theme: Theme) => ({
+            backgroundColor: theme.colors.backgroundWarning,
+          }),
+        },
+        content: {
+          style: (theme: Theme) => ({
+            color: theme.colors.accent100,
+          }),
+        },
+      }}
     >
       <Text>Hello World</Text>
     </Button>
