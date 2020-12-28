@@ -46,7 +46,11 @@ export interface ButtonProps {
    */
   endEnhancer?: ReactNode | FC;
 
-  children?: ReactNode;
+  /**
+   * Button content.
+   * @default null
+   */
+  children?: ReactNode | ReactNode[] | string;
 
   style?: StyleProp<ViewStyle>;
   // callbacks
@@ -55,4 +59,9 @@ export interface ButtonProps {
    * @default undefined
    */
   onPress?: () => void;
+}
+
+export interface ButtonContentProps {
+  style?: StyleProp<ViewStyle>;
+  children?: ReactNode;
 }

@@ -225,8 +225,6 @@ export type Font = {
   fontWeight:
     | 'bold'
     | 'normal'
-    | 'bolder'
-    | 'lighter'
     | '100'
     | '200'
     | '300'

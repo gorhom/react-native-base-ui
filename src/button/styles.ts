@@ -20,8 +20,27 @@ export const stylesCreator = createStyles(
       ...getKindStyles(theme, kind, isLoading, isSelected, disabled),
       ...getShapeStyles(theme, shape, size),
     },
+    content: {
+      ...getContentStyles(theme, kind, isLoading, isSelected, disabled),
+      ...getFontStyles(theme, size),
+      lineHeight: getShapeStyles(theme, shape, size).height,
+      textAlign: 'center',
+    },
   })
 );
+
+const getFontStyles = (theme: Theme, size: SIZE) => {
+  switch (size) {
+    case SIZE.mini:
+      return theme.typography.font150;
+    case SIZE.compact:
+      return theme.typography.font250;
+    case SIZE.large:
+      return theme.typography.font450;
+    default:
+      return theme.typography.font350;
+  }
+};
 
 const getBorderRadiusStyles = (theme: Theme, shape: SHAPE, size: SIZE) => {
   let value = theme.borders.buttonBorderRadius;
@@ -116,13 +135,65 @@ const getShapeStyles = (theme: Theme, shape: SHAPE, size: SIZE) => {
   }
 };
 
-function getKindStyles(
+const getContentStyles = (
   theme: Theme,
   kind: KIND,
   isLoading: boolean,
   isSelected: boolean,
   disabled: boolean
-) {
+) => {
+  if (disabled) {
+    return Object.freeze({});
+  }
+  switch (kind) {
+    case KIND.primary:
+      if (isSelected) {
+        return {
+          color: theme.colors.buttonPrimarySelectedText,
+        };
+      }
+      return {
+        color: theme.colors.buttonPrimaryText,
+      };
+    case KIND.secondary:
+      if (isSelected) {
+        return {
+          color: theme.colors.buttonPrimaryText,
+        };
+      }
+      return {
+        color: theme.colors.buttonSecondaryText,
+      };
+    case KIND.tertiary:
+      if (isSelected) {
+        return {
+          color: theme.colors.buttonTertiarySelectedText,
+        };
+      }
+      return {
+        color: theme.colors.buttonTertiaryText,
+      };
+    case KIND.minimal:
+      if (isSelected) {
+        return {
+          color: theme.colors.buttonMinimalSelectedText,
+        };
+      }
+      return {
+        color: theme.colors.buttonMinimalText,
+      };
+    default:
+      return Object.freeze({});
+  }
+};
+
+const getKindStyles = (
+  theme: Theme,
+  kind: KIND,
+  isLoading: boolean,
+  isSelected: boolean,
+  disabled: boolean
+) => {
   if (disabled) {
     return Object.freeze({});
   }
@@ -206,4 +277,4 @@ function getKindStyles(
     default:
       return Object.freeze({});
   }
-}
+};

@@ -2,10 +2,11 @@ import React, { useMemo } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { useThemedStyle } from '@gorhom/base-ui';
 import Enhancer from '../enhancer';
+import ButtonContent from './ButtonContent';
 import { stylesCreator } from './styles';
+import { KIND, SHAPE, SIZE } from './constants';
 
 import type { ButtonProps } from './types';
-import { KIND, SHAPE, SIZE } from './constants';
 
 const Button = ({
   style,
@@ -39,11 +40,12 @@ const Button = ({
     style,
   ]);
   //#endregion
+
   return (
     <TouchableOpacity style={containerStyle} onPress={onPress}>
       <>
         <Enhancer position="start" component={startEnhancer} />
-        {children}
+        <ButtonContent children={children} style={styles.content} />
         <Enhancer position="end" component={endEnhancer} />
       </>
     </TouchableOpacity>
