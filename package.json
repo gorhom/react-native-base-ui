@@ -33,9 +33,13 @@
     "build": "bob build && yarn copy-dts",
     "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib/typescript",
     "release": "release-it",
+    "generate:component": "yarn hygen base-ui new",
     "bootstrap": "cd ./storybook && yarn",
     "start": "cd ./storybook && yarn start",
     "storybook": "cd ./storybook && yarn storybook"
+  },
+  "dependencies": {
+    "is-react": "^1.5.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -52,6 +56,7 @@
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.0",
     "husky": "^4.3.6",
+    "hygen": "^6.0.4",
     "jest": "^26.0.1",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
@@ -72,12 +77,6 @@
       "<rootDir>/lib/"
     ]
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
   "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
@@ -91,8 +90,5 @@
         }
       ]
     ]
-  },
-  "dependencies": {
-    "is-react": "^1.5.4"
   }
 }
