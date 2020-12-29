@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
+import { action } from '@storybook/addon-actions';
 import { optionsKnob, boolean } from '@storybook/addon-knobs';
 import Input from './Input';
 import { SIZE } from './constants';
@@ -23,6 +24,8 @@ const createProps = (): InputProps => ({
   positive: boolean('positive', false),
   error: boolean('error', false),
   disabled: boolean('disabled', false),
+  onFocus: action('on focus'),
+  onBlur: action('on blur'),
 });
 
 const DummyEnhancer = (props: any) => <Text {...props}>🔥</Text>;

@@ -19,6 +19,7 @@ const styleCreator = createStyles(theme => ({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 34,
     backgroundColor: theme.colors.backgroundPrimary,
   },
 }));

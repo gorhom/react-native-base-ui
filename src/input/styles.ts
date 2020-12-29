@@ -121,7 +121,7 @@ const getInputFont = (theme: Theme, size: SIZE) => {
 
   return {
     ...style,
-    lineHeight: style.fontSize,
+    lineHeight: undefined,
   };
 };
 

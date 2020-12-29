@@ -50,16 +50,4 @@ export interface InputProps
    * @default undefined
    */
   endEnhancer?: ReactNode | FC;
-
-  //callbacks
-  /**
-   * Handler for the `focus` event
-   * @default undefined
-   */
-  onFocus?: () => void;
-  /**
-   * Handler for the `blur` event.
-   * @default undefined
-   */
-  onBlur?: () => void;
 }
