@@ -45,4 +45,21 @@ export const getComponentColorTokens = (
   buttonDisabledText: themePrimitives.mono300,
   buttonDisabledSpinnerForeground: themePrimitives.mono200,
   buttonDisabledSpinnerBackground: themePrimitives.mono400,
+
+  // Input
+  inputBorder: themePrimitives.mono600,
+  inputFill: themePrimitives.mono600,
+  inputFillActive: themePrimitives.mono500,
+  inputFillError: themePrimitives.negative700,
+  inputFillDisabled: themePrimitives.mono800,
+  inputFillPositive: themePrimitives.positive700,
+  inputTextDisabled: themePrimitives.mono500,
+  inputBorderError: themePrimitives.negative400,
+  inputBorderPositive: themePrimitives.positive400,
+  inputBorderFocused: themePrimitives.primary,
+  inputEnhancerFill: themePrimitives.mono500,
+  inputEnhancerFillDisabled: themePrimitives.mono700,
+  inputEnhancerTextDisabled: themePrimitives.mono500,
+  inputPlaceholder: themePrimitives.mono300,
+  inputPlaceholderDisabled: themePrimitives.mono500,
 });

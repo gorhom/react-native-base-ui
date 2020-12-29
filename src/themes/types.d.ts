@@ -214,13 +214,30 @@ export interface ComponentColorTokens {
   buttonDisabledText: string;
   buttonDisabledSpinnerForeground: string;
   buttonDisabledSpinnerBackground: string;
+
+  // Input
+  inputBorder: string;
+  inputFill: string;
+  inputFillError: string;
+  inputFillDisabled: string;
+  inputFillActive: string;
+  inputFillPositive: string;
+  inputTextDisabled: string;
+  inputBorderError: string;
+  inputBorderPositive: string;
+  inputBorderFocused: string;
+  inputEnhancerFill: string;
+  inputEnhancerFillDisabled: string;
+  inputEnhancerTextDisabled: string;
+  inputPlaceholder: string;
+  inputPlaceholderDisabled: string;
 }
 
 export interface FontTokens {
   primaryFontFamily: string;
 }
 
-export type Font = {
+export interface Font {
   fontFamily: string;
   fontWeight:
     | 'bold'
@@ -235,7 +252,7 @@ export type Font = {
     | '900';
   fontSize: number;
   lineHeight: number;
-};
+}
 
 export interface Typography {
   font100: Font;

@@ -7,5 +7,4 @@ type NamedStyles<T> = {
 
 export const createStyles = <T>(
   styles: (theme: Theme, ...args: any[]) => NamedStyles<T>
-) => (theme: Theme, ...args: any[]): NamedStyles<T> =>
-  StyleSheet.create(styles(theme, ...args));
+) => (theme: Theme, ...args: any[]): NamedStyles<T> => styles(theme, ...args);
