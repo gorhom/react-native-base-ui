@@ -1,5 +1,6 @@
-import React, { FC, useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { StyleSheet } from 'react-native';
+import { makeDecorator } from '@storybook/addons';
 import { DarkTheme, LightTheme, ThemeProvider } from '@gorhom/base-ui';
 import Button, { SHAPE } from '@gorhom/base-ui/button';
 
@@ -41,11 +42,13 @@ const ThemeProviderContainer = ({ children }) => {
   );
 };
 
-export const withThemeProvider = (Story: FC) => (
-  <ThemeProviderContainer>
-    <Story />
-  </ThemeProviderContainer>
-);
+export const withThemeProvider = makeDecorator({
+  name: 'withThemeProvider',
+  parameterName: '',
+  wrapper: (getStory, context) => (
+    <ThemeProviderContainer>{getStory(context)}</ThemeProviderContainer>
+  ),
+});
 
 const styles = StyleSheet.create({
   button: {

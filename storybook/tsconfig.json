@@ -1,0 +1,33 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "allowJs": true,
+    "strict": false,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "importsNotUsedAsValues": "preserve",
+    "noEmit": true,
+    "allowUnreachableCode": true,
+    "allowUnusedLabels": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": false,
+    "jsx": "react-jsx",
+    "lib": [
+      "esnext",
+      "DOM"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": false,
+    "noImplicitReturns": false,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src"
+  ]
+}
