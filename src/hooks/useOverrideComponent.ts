@@ -39,7 +39,7 @@ const getOverrideStyle = (
 
 export const useOverrideComponent = <T>(
   defaultComponent: React.ComponentType<T>,
-  defaultStyle: Style,
+  defaultStyle: Style | Partial<Style[]>,
   override?: Override
 ): [React.ComponentType<T>, T] => {
   ///#region hooks
@@ -57,7 +57,10 @@ export const useOverrideComponent = <T>(
   const props = useMemo<any>(
     () => ({
       ...(override && 'props' in override ? override?.props : {}),
-      style: [defaultStyle, getOverrideStyle(theme, override)],
+      style: [
+        ...(Array.isArray(defaultStyle) ? defaultStyle : [defaultStyle]),
+        getOverrideStyle(theme, override),
+      ],
     }),
     [override, defaultStyle, theme]
   );

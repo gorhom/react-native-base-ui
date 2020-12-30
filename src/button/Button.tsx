@@ -4,20 +4,21 @@ import Enhancer from '../enhancer';
 import ButtonContent from './ButtonContent';
 import { useThemedStyle, useOverrideComponent } from '../hooks';
 import { stylesCreator } from './styles';
-import { KIND, SHAPE, SIZE } from './constants';
+import { BUTTON_KIND, BUTTON_SHAPE, BUTTON_SIZE } from './constants';
 
 import type { ButtonProps } from './types';
 
 const Button = ({
   // presets
   overrides,
-  kind = KIND.primary,
-  size = SIZE.default,
-  shape = SHAPE.default,
+  kind = BUTTON_KIND.primary,
+  size = BUTTON_SIZE.default,
+  shape = BUTTON_SHAPE.default,
   // configs
   isLoading = false,
   isSelected = false,
   disabled = false,
+  style,
   // callbacks
   onPress,
   // components
@@ -40,7 +41,7 @@ const Button = ({
   //#region components
   const [BaseButton, BaseButtonProps] = useOverrideComponent(
     TouchableOpacity,
-    styles.baseButton,
+    [styles.baseButton, style],
     overrides?.baseButton
   );
 
@@ -65,17 +66,9 @@ const Button = ({
   return (
     <BaseButton {...BaseButtonProps} onPress={onPress}>
       <>
-        <StartEnhancer
-          {...StartEnhancerProps}
-          position="start"
-          component={startEnhancer}
-        />
+        <StartEnhancer {...StartEnhancerProps} children={startEnhancer} />
         <Content {...ContentProps} children={children} />
-        <EndEnhancer
-          {...EndEnhancerProps}
-          position="end"
-          component={endEnhancer}
-        />
+        <EndEnhancer {...EndEnhancerProps} children={endEnhancer} />
       </>
     </BaseButton>
   );

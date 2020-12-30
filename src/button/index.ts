@@ -1,2 +1,3 @@
 export { default } from './Button';
-export { KIND, SHAPE, SIZE } from './constants';
+export { BUTTON_KIND, BUTTON_SHAPE, BUTTON_SIZE } from './constants';
+export type { ButtonProps } from './types';

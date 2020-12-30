@@ -1,13 +1,13 @@
 import { createStyles, Theme } from '@gorhom/base-ui';
-import { KIND, SIZE, SHAPE } from './constants';
+import { BUTTON_KIND, BUTTON_SIZE, BUTTON_SHAPE } from './constants';
 import type { ButtonOverrides } from './types';
 
 export const stylesCreator = createStyles<ButtonOverrides>(
   (
     theme,
-    kind: KIND,
-    size: SIZE,
-    shape: SHAPE,
+    kind: BUTTON_KIND,
+    size: BUTTON_SIZE,
+    shape: BUTTON_SHAPE,
     isLoading: boolean,
     isSelected: boolean,
     disabled: boolean
@@ -27,36 +27,48 @@ export const stylesCreator = createStyles<ButtonOverrides>(
       lineHeight: getShapeStyles(theme, shape, size).height,
       textAlign: 'center',
     },
-    startEnhancer: {},
-    endEnhancer: {},
+    startEnhancer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginEnd: theme.sizing.scale500,
+    },
+    endEnhancer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginStart: theme.sizing.scale500,
+    },
   })
 );
 
-const getFontStyles = (theme: Theme, size: SIZE) => {
+const getFontStyles = (theme: Theme, size: BUTTON_SIZE) => {
   switch (size) {
-    case SIZE.mini:
+    case BUTTON_SIZE.mini:
       return theme.typography.font150;
-    case SIZE.compact:
+    case BUTTON_SIZE.compact:
       return theme.typography.font250;
-    case SIZE.large:
+    case BUTTON_SIZE.large:
       return theme.typography.font450;
     default:
       return theme.typography.font350;
   }
 };
 
-const getBorderRadiusStyles = (theme: Theme, shape: SHAPE, size: SIZE) => {
+const getBorderRadiusStyles = (
+  theme: Theme,
+  shape: BUTTON_SHAPE,
+  size: BUTTON_SIZE
+) => {
   let value = theme.borders.buttonBorderRadius;
 
-  if (shape === SHAPE.pill) {
-    if (size === SIZE.compact) {
+  if (shape === BUTTON_SHAPE.pill) {
+    if (size === BUTTON_SIZE.compact) {
       value = 30;
-    } else if (size === SIZE.large) {
+    } else if (size === BUTTON_SIZE.large) {
       value = 42;
     } else {
       value = 38;
     }
-  } else if (shape === SHAPE.circle || shape === SHAPE.round) {
+  } else if (shape === BUTTON_SHAPE.circle || shape === BUTTON_SHAPE.round) {
     value = 2000;
   }
 
@@ -68,58 +80,68 @@ const getBorderRadiusStyles = (theme: Theme, shape: SHAPE, size: SIZE) => {
   };
 };
 
-const getPaddingStyles = (theme: Theme, shape: SHAPE, size: SIZE) => {
+const getPaddingStyles = (
+  theme: Theme,
+  shape: BUTTON_SHAPE,
+  size: BUTTON_SIZE
+) => {
   const iconShape =
-    shape === SHAPE.square || shape === SHAPE.circle || shape === SHAPE.round;
+    shape === BUTTON_SHAPE.square ||
+    shape === BUTTON_SHAPE.circle ||
+    shape === BUTTON_SHAPE.round;
   switch (size) {
-    case SIZE.mini:
+    case BUTTON_SIZE.mini:
       return {
-        paddingTop: theme.sizing.scale200,
-        paddingBottom: theme.sizing.scale200,
-        paddingLeft: iconShape ? theme.sizing.scale200 : theme.sizing.scale300,
-        paddingRight: iconShape ? theme.sizing.scale200 : theme.sizing.scale300,
+        paddingVertical: theme.sizing.scale200,
+        paddingHorizontal: iconShape
+          ? theme.sizing.scale200
+          : theme.sizing.scale300,
       };
-    case SIZE.compact:
+    case BUTTON_SIZE.compact:
       return {
-        paddingTop: theme.sizing.scale400,
-        paddingBottom: theme.sizing.scale400,
-        paddingLeft: iconShape ? theme.sizing.scale400 : theme.sizing.scale500,
-        paddingRight: iconShape ? theme.sizing.scale400 : theme.sizing.scale500,
+        paddingVertical: theme.sizing.scale400,
+        paddingHorizontal: iconShape
+          ? theme.sizing.scale400
+          : theme.sizing.scale500,
       };
-    case SIZE.large:
+    case BUTTON_SIZE.large:
       return {
-        paddingTop: theme.sizing.scale600,
-        paddingBottom: theme.sizing.scale600,
-        paddingLeft: iconShape ? theme.sizing.scale600 : theme.sizing.scale700,
-        paddingRight: iconShape ? theme.sizing.scale600 : theme.sizing.scale700,
+        paddingVertical: theme.sizing.scale600,
+        paddingHorizontal: iconShape
+          ? theme.sizing.scale600
+          : theme.sizing.scale700,
       };
     default:
       return {
-        paddingTop: theme.sizing.scale550,
-        paddingBottom: theme.sizing.scale550,
-        paddingLeft: iconShape ? theme.sizing.scale550 : theme.sizing.scale600,
-        paddingRight: iconShape ? theme.sizing.scale550 : theme.sizing.scale600,
+        paddingVertical: theme.sizing.scale550,
+        paddingHorizontal: iconShape
+          ? theme.sizing.scale550
+          : theme.sizing.scale600,
       };
   }
 };
 
-const getShapeStyles = (theme: Theme, shape: SHAPE, size: SIZE) => {
-  if (shape === SHAPE.circle || shape === SHAPE.square) {
+const getShapeStyles = (
+  theme: Theme,
+  shape: BUTTON_SHAPE,
+  size: BUTTON_SIZE
+) => {
+  if (shape === BUTTON_SHAPE.circle || shape === BUTTON_SHAPE.square) {
     let height, width;
     switch (size) {
-      case SIZE.mini:
+      case BUTTON_SIZE.mini:
         height = 28;
         width = 28;
         break;
-      case SIZE.compact:
+      case BUTTON_SIZE.compact:
         height = 36;
         width = 36;
         break;
-      case SIZE.large:
+      case BUTTON_SIZE.large:
         height = 56;
         width = 56;
         break;
-      case SIZE.default:
+      case BUTTON_SIZE.default:
       default:
         height = 48;
         width = 48;
@@ -128,10 +150,8 @@ const getShapeStyles = (theme: Theme, shape: SHAPE, size: SIZE) => {
     return {
       height,
       width,
-      paddingTop: 0,
-      paddingBottom: 0,
-      paddingLeft: 0,
-      paddingRight: 0,
+      paddingVertical: 0,
+      paddingHorizontal: 0,
     };
   } else {
     return {};
@@ -140,7 +160,7 @@ const getShapeStyles = (theme: Theme, shape: SHAPE, size: SIZE) => {
 
 const getContentStyles = (
   theme: Theme,
-  kind: KIND,
+  kind: BUTTON_KIND,
   isLoading: boolean,
   isSelected: boolean,
   disabled: boolean
@@ -149,7 +169,7 @@ const getContentStyles = (
     return Object.freeze({});
   }
   switch (kind) {
-    case KIND.primary:
+    case BUTTON_KIND.primary:
       if (isSelected) {
         return {
           color: theme.colors.buttonPrimarySelectedText,
@@ -158,7 +178,7 @@ const getContentStyles = (
       return {
         color: theme.colors.buttonPrimaryText,
       };
-    case KIND.secondary:
+    case BUTTON_KIND.secondary:
       if (isSelected) {
         return {
           color: theme.colors.buttonPrimaryText,
@@ -167,7 +187,7 @@ const getContentStyles = (
       return {
         color: theme.colors.buttonSecondaryText,
       };
-    case KIND.tertiary:
+    case BUTTON_KIND.tertiary:
       if (isSelected) {
         return {
           color: theme.colors.buttonTertiarySelectedText,
@@ -176,7 +196,7 @@ const getContentStyles = (
       return {
         color: theme.colors.buttonTertiaryText,
       };
-    case KIND.minimal:
+    case BUTTON_KIND.minimal:
       if (isSelected) {
         return {
           color: theme.colors.buttonMinimalSelectedText,
@@ -192,7 +212,7 @@ const getContentStyles = (
 
 const getKindStyles = (
   theme: Theme,
-  kind: KIND,
+  kind: BUTTON_KIND,
   isLoading: boolean,
   isSelected: boolean,
   disabled: boolean
@@ -201,7 +221,7 @@ const getKindStyles = (
     return Object.freeze({});
   }
   switch (kind) {
-    case KIND.primary:
+    case BUTTON_KIND.primary:
       if (isSelected) {
         return {
           color: theme.colors.buttonPrimarySelectedText,
@@ -220,7 +240,7 @@ const getKindStyles = (
         //   backgroundColor: theme.colors.buttonPrimaryActive,
         // },
       };
-    case KIND.secondary:
+    case BUTTON_KIND.secondary:
       if (isSelected) {
         return {
           color: theme.colors.buttonPrimaryText,
@@ -239,7 +259,7 @@ const getKindStyles = (
         //   backgroundColor: theme.colors.buttonSecondaryActive,
         // },
       };
-    case KIND.tertiary:
+    case BUTTON_KIND.tertiary:
       if (isSelected) {
         return {
           color: theme.colors.buttonTertiarySelectedText,
@@ -258,7 +278,7 @@ const getKindStyles = (
         //   backgroundColor: theme.colors.buttonTertiaryActive,
         // },
       };
-    case KIND.minimal:
+    case BUTTON_KIND.minimal:
       if (isSelected) {
         return {
           color: theme.colors.buttonMinimalSelectedText,

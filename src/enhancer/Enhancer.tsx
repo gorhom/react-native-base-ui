@@ -1,37 +1,27 @@
 import React from 'react';
-import { Text } from 'react-native';
-import { useThemedStyle } from '@gorhom/base-ui';
-import { stylesCreator } from './styles';
+import { Text, View } from 'react-native';
+import { styles } from './styles';
 import type { EnhancerProps } from './types';
 
-const Enhancer = ({
-  position,
-  component: Component = null,
-  style,
-}: EnhancerProps) => {
-  //#region styles
-  const styles = useThemedStyle(stylesCreator, position);
-  //#endregion
-
+const Enhancer = ({ children: Component = null, style }: EnhancerProps) => {
   //#region render
   if (Component === null || Component === undefined) {
     return null;
   }
 
-  if (typeof Component === 'function') {
-    // @ts-ignore
-    return Component({ style: [styles.container, style] });
-  }
-
-  if (typeof Component === 'object') {
-    // @ts-ignore
-    return <Component style={[styles.container, style]} />;
-  }
-
   if (typeof Component === 'string') {
     return <Text style={[styles.container, style]}>{Component}</Text>;
   }
-  return null;
+
+  if (typeof Component === 'object') {
+    return <View style={style}>{Component}</View>;
+  }
+
+  return (
+    <View style={style}>
+      <Component />
+    </View>
+  );
   //#endregion
 };
 

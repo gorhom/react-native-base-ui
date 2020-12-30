@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { makeDecorator } from '@storybook/addons';
 import { DarkTheme, LightTheme, ThemeProvider } from '@gorhom/base-ui';
-import Button, { SHAPE } from '@gorhom/base-ui/button';
+import Button, { BUTTON_SHAPE } from '@gorhom/base-ui/button';
 
 //@ts-ignore
 const ThemeProviderContainer = ({ children }) => {
@@ -27,7 +27,7 @@ const ThemeProviderContainer = ({ children }) => {
       <>
         {children}
         <Button
-          shape={SHAPE.circle}
+          shape={BUTTON_SHAPE.circle}
           overrides={{
             baseButton: {
               style: styles.button,

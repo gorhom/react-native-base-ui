@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { optionsKnob, boolean } from '@storybook/addon-knobs';
 import Button from './Button';
-import { KIND, SHAPE, SIZE } from './constants';
+import { BUTTON_KIND, BUTTON_SHAPE, BUTTON_SIZE } from './constants';
 import type { ButtonProps } from './types';
 import type { Theme } from '../themes';
 
@@ -12,12 +12,12 @@ const props = (): ButtonProps => ({
   kind: optionsKnob(
     'kind',
     {
-      primary: KIND.primary,
-      secondary: KIND.secondary,
-      tertiary: KIND.tertiary,
-      minimal: KIND.minimal,
+      primary: BUTTON_KIND.primary,
+      secondary: BUTTON_KIND.secondary,
+      tertiary: BUTTON_KIND.tertiary,
+      minimal: BUTTON_KIND.minimal,
     },
-    KIND.primary,
+    BUTTON_KIND.primary,
     {
       display: 'inline-radio',
     }
@@ -26,13 +26,13 @@ const props = (): ButtonProps => ({
   shape: optionsKnob(
     'shape',
     {
-      default: SHAPE.default,
-      pill: SHAPE.pill,
-      round: SHAPE.round,
-      square: SHAPE.square,
-      circle: SHAPE.circle,
+      default: BUTTON_SHAPE.default,
+      pill: BUTTON_SHAPE.pill,
+      round: BUTTON_SHAPE.round,
+      square: BUTTON_SHAPE.square,
+      circle: BUTTON_SHAPE.circle,
     },
-    SHAPE.default,
+    BUTTON_SHAPE.default,
     {
       display: 'inline-radio',
     }
@@ -41,12 +41,12 @@ const props = (): ButtonProps => ({
   size: optionsKnob(
     'size',
     {
-      default: SIZE.default,
-      large: SIZE.large,
-      compact: SIZE.compact,
-      mini: SIZE.mini,
+      default: BUTTON_SIZE.default,
+      large: BUTTON_SIZE.large,
+      compact: BUTTON_SIZE.compact,
+      mini: BUTTON_SIZE.mini,
     },
-    SIZE.default,
+    BUTTON_SIZE.default,
     {
       display: 'inline-radio',
     }

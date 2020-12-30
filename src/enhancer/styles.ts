@@ -1,9 +1,9 @@
-import { createStyles } from '@gorhom/base-ui';
-import { POSITION } from './constants';
+import { StyleSheet } from 'react-native';
 
-export const stylesCreator = createStyles((theme, position: POSITION) => ({
+export const styles = StyleSheet.create({
   container: {
-    [position === POSITION.start ? 'marginEnd' : 'marginStart']: theme.sizing
-      .scale500,
+    alignItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
   },
-}));
+});
