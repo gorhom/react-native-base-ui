@@ -1,2 +1,3 @@
 export { default } from './Icon';
-export { TYPE } from './constants';
+export { ICON_SETS } from './constants';
+export type { NAME } from './types';

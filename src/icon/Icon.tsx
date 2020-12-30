@@ -1,27 +1,29 @@
-import React from 'react';
-import { View } from 'react-native';
+import React, { useMemo } from 'react';
+import { Text } from 'react-native';
 import { useThemedStyle, useOverrideComponent } from '../hooks';
-import { TYPE } from './constants';
+import { DEFAULT_SIZE, ICON_SETS } from './constants';
 import { stylesCreator } from './styles';
 
 import type { IconProps } from './types';
 
-const Icon = ({ overrides, type = TYPE.type1 }: IconProps) => {
+const Icon = ({ overrides, name, size = DEFAULT_SIZE, color }: IconProps) => {
+  //#region variables
+  const iconChar = useMemo(() => ICON_SETS[name], [name]);
+  //#endregion
+
   //#region styles
-  const styles = useThemedStyle(stylesCreator);
+  const styles = useThemedStyle(stylesCreator, size, color);
   //#endregion
 
   //#region override components
   const [RootView, RootViewProps] = useOverrideComponent(
-    View,
+    Text,
     styles.container,
     overrides?.container
   );
   //#endregion
 
-  console.log('type', type);
-
-  return <RootView {...RootViewProps}>{/* IMPLEMENT COMPONENT */}</RootView>;
+  return <RootView {...RootViewProps}>{iconChar}</RootView>;
 };
 
 export default Icon;
