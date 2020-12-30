@@ -3,11 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { select, color, number } from '@storybook/addon-knobs';
 import Icon from './Icon';
-import type { IconProps, NAME } from './types';
+import type { IconProps, ICON_NAME } from './types';
 import { ICON_SETS } from './constants';
 
 const getProps = (): IconProps => ({
-  name: select<NAME>(
+  name: select<ICON_NAME>(
     'name',
     Object.keys(ICON_SETS).reduce((result, key) => {
       // @ts-ignore

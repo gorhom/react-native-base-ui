@@ -2,7 +2,7 @@ import type { TextProps } from 'react-native';
 import type { Override } from '../types';
 import type { ICON_SETS } from './constants';
 
-export type NAME = keyof typeof ICON_SETS;
+export type ICON_NAME = keyof typeof ICON_SETS;
 
 export interface IconOverrides {
   [key: string]: Override<any>;
@@ -19,7 +19,7 @@ export interface IconProps {
   /**
    * Defines the icon name.
    */
-  name: NAME;
+  name: ICON_NAME;
 
   /**
    * Defines the icon size.
