@@ -1,11 +1,20 @@
 import { createStyles } from '@gorhom/base-ui';
 import type { ViewStyle } from 'react-native';
-import { ADJOINED, SIZE } from './constants';
+import { INPUT_ADJOINED, INPUT_SIZE } from './constants';
 import type { Theme } from '../themes';
 import type { InputOverrides } from './types';
 
 export const stylesCreator = createStyles<InputOverrides>(
-  (theme, size, positive, error, disabled, isFocused, adjoined) => ({
+  (
+    theme,
+    size,
+    positive,
+    error,
+    disabled,
+    isFocused,
+    adjoined,
+    hasIconTrailing
+  ) => ({
     container: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -15,9 +24,10 @@ export const stylesCreator = createStyles<InputOverrides>(
       borderStyle: 'solid',
       borderRadius: theme.borders.inputBorderRadius,
       ...getRootColors(theme, positive, error, disabled, isFocused),
-      ...getRootPadding(theme, adjoined),
+      ...getRootPadding(theme, adjoined, hasIconTrailing),
     },
     baseInput: {
+      flex: 1,
       flexGrow: 1,
       padding: 0,
       margin: 0,
@@ -47,6 +57,14 @@ export const stylesCreator = createStyles<InputOverrides>(
       ...getInputEnhancerPadding(theme, size),
       ...getInputEnhancerColors(theme, disabled, isFocused, error, positive),
     },
+    clearIconContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginStart: 0,
+      marginEnd: 0,
+      ...getInputEnhancerPadding(theme, size),
+    },
+    clearIcon: {},
   })
 );
 
@@ -86,32 +104,39 @@ const getRootColors = (
 };
 
 // @TODO
-const getRootPadding = (theme: Theme, adjoined: ADJOINED) => ({
-  [adjoined === ADJOINED.both
-    ? 'paddingHorizontal'
-    : adjoined === ADJOINED.left
-    ? 'paddingStart'
-    : adjoined === ADJOINED.right
-    ? 'paddingEnd'
-    : 'none']: theme.sizing.scale550,
-});
+const getRootPadding = (
+  theme: Theme,
+  adjoined: INPUT_ADJOINED,
+  hasIconTrailing: boolean
+) => {
+  const hasStartPadding =
+    adjoined === INPUT_ADJOINED.both || adjoined === INPUT_ADJOINED.start;
+  const hasEndPadding =
+    adjoined === INPUT_ADJOINED.both ||
+    adjoined === INPUT_ADJOINED.end ||
+    hasIconTrailing;
+  return {
+    paddingStart: hasStartPadding ? theme.sizing.scale550 : 0,
+    paddingEnd: hasEndPadding ? theme.sizing.scale550 : 0,
+  };
+};
 
-const getInputFont = (theme: Theme, size: SIZE) => {
+const getInputFont = (theme: Theme, size: INPUT_SIZE) => {
   let style;
   switch (size) {
-    case SIZE.mini:
+    case INPUT_SIZE.mini:
       style = theme.typography.font100;
       break;
 
-    case SIZE.compact:
+    case INPUT_SIZE.compact:
       style = theme.typography.font200;
       break;
 
-    case SIZE.default:
+    case INPUT_SIZE.default:
       style = theme.typography.font300;
       break;
 
-    case SIZE.large:
+    case INPUT_SIZE.large:
       style = theme.typography.font400;
       break;
 
@@ -125,27 +150,27 @@ const getInputFont = (theme: Theme, size: SIZE) => {
   };
 };
 
-const getInputPadding = (theme: Theme, size: SIZE): ViewStyle => {
+const getInputPadding = (theme: Theme, size: INPUT_SIZE): ViewStyle => {
   switch (size) {
-    case SIZE.mini:
+    case INPUT_SIZE.mini:
       return {
         paddingVertical: theme.sizing.scale100,
         paddingHorizontal: theme.sizing.scale550,
       };
 
-    case SIZE.compact:
+    case INPUT_SIZE.compact:
       return {
         paddingVertical: theme.sizing.scale200,
         paddingHorizontal: theme.sizing.scale550,
       };
 
-    case SIZE.default:
+    case INPUT_SIZE.default:
       return {
         paddingVertical: theme.sizing.scale400,
         paddingHorizontal: theme.sizing.scale550,
       };
 
-    case SIZE.large:
+    case INPUT_SIZE.large:
       return {
         paddingVertical: theme.sizing.scale550,
         paddingHorizontal: theme.sizing.scale550,
@@ -172,24 +197,24 @@ const getInputColors = (theme: Theme, disabled: boolean) => {
   }
 };
 
-const getInputEnhancerPadding = (theme: Theme, size: SIZE): ViewStyle => {
+const getInputEnhancerPadding = (theme: Theme, size: INPUT_SIZE): ViewStyle => {
   switch (size) {
-    case SIZE.mini:
+    case INPUT_SIZE.mini:
       return {
         paddingHorizontal: theme.sizing.scale400,
       };
 
-    case SIZE.compact:
+    case INPUT_SIZE.compact:
       return {
         paddingHorizontal: theme.sizing.scale400,
       };
 
-    case SIZE.default:
+    case INPUT_SIZE.default:
       return {
         paddingHorizontal: theme.sizing.scale300,
       };
 
-    case SIZE.large:
+    case INPUT_SIZE.large:
       return {
         paddingHorizontal: theme.sizing.scale200,
       };

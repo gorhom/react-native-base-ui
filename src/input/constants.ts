@@ -1,15 +1,17 @@
-enum SIZE {
+enum INPUT_SIZE {
   default = 'default',
   large = 'large',
   compact = 'compact',
   mini = 'mini',
 }
 
-enum ADJOINED {
+enum INPUT_ADJOINED {
   none = 'none',
-  left = 'left',
-  right = 'right',
+  start = 'start',
+  end = 'end',
   both = 'both',
 }
 
-export { SIZE, ADJOINED };
+const DEFAULT_CLEARABLE = false;
+
+export { INPUT_SIZE, INPUT_ADJOINED, DEFAULT_CLEARABLE };

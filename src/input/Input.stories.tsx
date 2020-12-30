@@ -4,19 +4,19 @@ import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { optionsKnob, boolean } from '@storybook/addon-knobs';
 import Input from './Input';
-import { SIZE } from './constants';
+import { INPUT_SIZE } from './constants';
 import type { InputProps } from './types';
 
 const createProps = (): InputProps => ({
   size: optionsKnob(
     'size',
     {
-      default: SIZE.default,
-      large: SIZE.large,
-      compact: SIZE.compact,
-      mini: SIZE.mini,
+      default: INPUT_SIZE.default,
+      large: INPUT_SIZE.large,
+      compact: INPUT_SIZE.compact,
+      mini: INPUT_SIZE.mini,
     },
-    SIZE.default,
+    INPUT_SIZE.default,
     {
       display: 'inline-radio',
     }
@@ -24,6 +24,10 @@ const createProps = (): InputProps => ({
   positive: boolean('positive', false),
   error: boolean('error', false),
   disabled: boolean('disabled', false),
+  clearable: boolean('clearable', false),
+
+  // actions
+  onChangeText: action('on change text'),
   onFocus: action('on focus'),
   onBlur: action('on blur'),
 });

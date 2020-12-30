@@ -1,12 +1,16 @@
 import type { TextInputProps, ViewProps } from 'react-native';
+import type { IconProps } from '../icon';
 import type { Override } from '../types';
+import type { INPUT_SIZE } from './constants';
 
 export interface InputOverrides {
   [key: string]: Override<any>;
   container?: Override<ViewProps>;
   baseInput?: Override<TextInputProps>;
-  startEnhancer?: Override;
-  endEnhancer?: Override;
+  startEnhancer?: Override<ViewProps>;
+  endEnhancer?: Override<ViewProps>;
+  clearIcon?: Override<IconProps>;
+  clearIconContainer?: Override<ViewProps>;
 }
 
 export interface InputProps
@@ -34,20 +38,25 @@ export interface InputProps
    */
   disabled?: boolean;
   /**
+   * If true, adds a clear value icon button to the end of the input container.
+   * @default false
+   */
+  clearable?: boolean;
+  /**
    * Defines the size of the input.
    * @default SIZE.default
    */
-  size?: SIZE;
+  size?: INPUT_SIZE;
 
   // enhancer
   /**
    * A helper rendered at the start of the input.
    * @default undefined
    */
-  startEnhancer?: ReactNode | FC;
+  startEnhancer?: FC;
   /**
    * A helper rendered at the end of the input.
    * @default undefined
    */
-  endEnhancer?: ReactNode | FC;
+  endEnhancer?: FC;
 }
