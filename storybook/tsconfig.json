@@ -12,7 +12,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": false,
     "jsx": "react-jsx",
-    "lib": ["esnext", "DOM"],
+    "lib": [
+      "esnext",
+      "DOM"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": false,
@@ -24,5 +27,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
