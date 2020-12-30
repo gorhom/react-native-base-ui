@@ -1,16 +1,4 @@
 {
-  "name": "@gorhom/base-ui-example",
-  "displayName": "Base UI Example",
-  "expo": {
-    "name": "@gorhom/base-ui-example",
-    "slug": "@gorhom/base-ui-example",
-    "description": "Example app for @gorhom/base-ui",
-    "privacy": "public",
-    "version": "1.0.0",
-    "platforms": ["ios", "android", "web"],
-    "ios": {
-      "supportsTablet": true
-    },
-    "assetBundlePatterns": ["**/*"]
-  }
+  "name": "baseui",
+  "displayName": "baseui"
 }
