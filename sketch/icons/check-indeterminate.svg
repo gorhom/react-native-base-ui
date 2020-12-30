@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>check-indeterminate</title>
+    <desc>Created with Sketch.</desc>
+    <g id="check-indeterminate" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M6,12 C6,11.4477 6.44772,11 7,11 L17,11 C17.5523,11 18,11.4477 18,12 C18,12.5523 17.5523,13 17,13 L7,13 C6.44772,13 6,12.5523 6,12 Z" id="Path" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>grab</title>
+    <desc>Created with Sketch.</desc>
+    <g id="grab" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M5,8 C4.44775,8 4,8.44775 4,9 C4,9.55225 4.44775,10 5,10 L19,10 C19.5522,10 20,9.55225 20,9 C20,8.44775 19.5522,8 19,8 L5,8 Z M5,14 C4.44775,14 4,14.4478 4,15 C4,15.5522 4.44775,16 5,16 L19,16 C19.5522,16 20,15.5522 20,15 C20,14.4478 19.5522,14 19,14 L5,14 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg>
