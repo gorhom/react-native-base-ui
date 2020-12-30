@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import { makeDecorator } from '@storybook/addons';
 import { createStyles, useThemedStyle } from '@gorhom/base-ui';
 
 // @ts-ignore
@@ -8,11 +9,11 @@ const CenterView = ({ children }) => {
   return <View style={styles.container}>{children}</View>;
 };
 
-export const withCenterView = (Story: any) => (
-  <CenterView>
-    <Story />
-  </CenterView>
-);
+export const withCenterView = makeDecorator({
+  name: 'withCenterView',
+  parameterName: '',
+  wrapper: (getStory, context) => <CenterView>{getStory(context)}</CenterView>,
+});
 
 const styleCreator = createStyles(theme => ({
   container: {
