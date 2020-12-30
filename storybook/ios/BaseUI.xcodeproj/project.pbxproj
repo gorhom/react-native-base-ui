@@ -10,6 +10,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		328A1894776B45C99B75DC17 /* baseui-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DE1D295F5D34401B5399710 /* baseui-icons.ttf */; };
 		7FFEBF27F9CF2916B112EA20 /* libPods-BaseUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4ACA92271CFB897139A62 /* libPods-BaseUI.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -23,6 +24,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = baseui/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = baseui/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = baseui/main.m; sourceTree = "<group>"; };
+		3DE1D295F5D34401B5399710 /* baseui-icons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "baseui-icons.ttf"; path = "../../fonts/baseui-icons.ttf"; sourceTree = "<group>"; };
 		41B4ACA92271CFB897139A62 /* libPods-BaseUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4858BC91746B3EDE5547268E /* libPods-baseui-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-baseui-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		735E6227338D85D8C5535D0E /* Pods-BaseUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseUI.release.xcconfig"; path = "Target Support Files/Pods-BaseUI/Pods-BaseUI.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 			name = baseui;
 			sourceTree = "<group>";
 		};
+		14D954F18CCB41A2A35B2A72 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DE1D295F5D34401B5399710 /* baseui-icons.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				87AA3D022473CA70578A3B56 /* Pods */,
+				14D954F18CCB41A2A35B2A72 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -176,6 +187,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				328A1894776B45C99B75DC17 /* baseui-icons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

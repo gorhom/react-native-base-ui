@@ -8,8 +8,8 @@ const {
   override,
 } = require('customize-cra');
 const { plugins } = require('./babel.config');
-const path = require('path');
 
+const path = require('path');
 const root = path.resolve(__dirname, '../');
 
 module.exports = override(
@@ -17,6 +17,11 @@ module.exports = override(
     test: /\.(js|jsx|ts|tsx)$/,
     include: path.resolve(root, 'src'),
     use: 'babel-loader',
+  }),
+  addWebpackModuleRule({
+    test: /\.ttf$/,
+    loader: 'url-loader',
+    include: root,
   }),
   fixBabelImports('module-resolver', {
     alias: {
