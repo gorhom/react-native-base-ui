@@ -1,5 +1,5 @@
 ---
-to: ./storybook/stories/index.ts
+to: ./storybook/src/stories.ts
 inject: true
 append: true
 ---
