@@ -5,5 +5,6 @@ import './index.css';
 AppRegistry.registerComponent('appName', () => App);
 
 AppRegistry.runApplication('appName', {
+  // @ts-ignore
   rootTag: document.getElementById('root'),
 });

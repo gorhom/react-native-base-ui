@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { createStyles, useThemedStyle } from '@gorhom/base-ui';
 
@@ -8,7 +8,7 @@ const CenterView = ({ children }) => {
   return <View style={styles.container}>{children}</View>;
 };
 
-export const withCenterView = (Story: FC) => (
+export const withCenterView = (Story: any) => (
   <CenterView>
     <Story />
   </CenterView>

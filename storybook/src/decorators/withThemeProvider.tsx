@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { DarkTheme, LightTheme, ThemeProvider } from '@gorhom/base-ui';
 import Button, { SHAPE } from '@gorhom/base-ui/button';
@@ -41,7 +41,7 @@ const ThemeProviderContainer = ({ children }) => {
   );
 };
 
-export const withThemeProvider = (Story: FC) => (
+export const withThemeProvider = (Story: any) => (
   <ThemeProviderContainer>
     <Story />
   </ThemeProviderContainer>
