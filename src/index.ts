@@ -10,6 +10,7 @@ export {
   createDarkTheme,
   LightTheme,
   createLightTheme,
+  createThemedStyles,
   createStyles,
 } from './themes';
 

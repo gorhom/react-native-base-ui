@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react';
 import { Text as RNText } from 'react-native';
-import { useThemedStyle } from '@gorhom/base-ui';
+import { useThemedStyle, useOverrideComponent } from '../hooks';
 import { stylesCreator } from './styles';
 import { FONT, COLOR } from './constants';
 
@@ -10,9 +10,9 @@ const createTypography = (
   _font: string,
   _color: string
 ): FC<TypographyProps> => ({
+  overrides,
   font: _providedFont,
   color: _providedColor,
-  style: _providedStyle,
   ...rest
 }) => {
   //#region variables
@@ -26,12 +26,15 @@ const createTypography = (
 
   //#region styles
   const styles = useThemedStyle(stylesCreator, font, color);
-  const textStyle = useMemo(() => [styles.text, _providedStyle], [
-    styles.text,
-    _providedStyle,
-  ]);
   //#endregion
-  return <RNText style={textStyle} {...rest} />;
+
+  const [Container, containerProps] = useOverrideComponent(
+    RNText,
+    styles.container,
+    overrides?.container
+  );
+
+  return <Container {...rest} {...containerProps} />;
 };
 
 //#region display

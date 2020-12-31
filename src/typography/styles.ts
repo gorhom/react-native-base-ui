@@ -1,8 +1,9 @@
-import { createStyles } from '@gorhom/base-ui';
+import { createThemedStyles } from '../themes';
+import type { TypographyOverrides } from './types';
 
-export const stylesCreator = createStyles(
+export const stylesCreator = createThemedStyles<TypographyOverrides>(
   (theme, font: string, color: string) => ({
-    text: {
+    container: {
       // @ts-ignore
       color: color in theme.colors ? theme.colors[color] : color,
       ...(font in theme.typography

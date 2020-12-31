@@ -5,38 +5,34 @@ import type {
   ViewProps,
   ViewStyle,
 } from 'react-native';
-import type { Override } from '../types';
-import type { KIND, SHAPE, SIZE } from './constants';
+import type { Override, BaseUIComponent } from '../types';
+import type { BUTTON_KIND, BUTTON_SHAPE, BUTTON_SIZE } from './constants';
 
 export interface ButtonOverrides {
   [key: string]: Override<any>;
   baseButton?: Override<TouchableOpacityProps>;
   content?: Override<ViewProps>;
-  startEnhancer?: Override;
-  endEnhancer?: Override;
+  startEnhancer?: Override<ViewProps>;
+  endEnhancer?: Override<ViewProps>;
 }
 
-export interface ButtonProps {
-  /**
-   * Defines the button overrides.
-   * @default undefined
-   */
-  overrides?: ButtonOverrides;
+export interface ButtonProps
+  extends BaseUIComponent<ButtonOverrides, ViewStyle> {
   /**
    * Defines the kind (purpose) of a button.
-   * @default KIND.primary
+   * @default BUTTON_KIND.primary
    */
-  kind?: KIND;
+  kind?: BUTTON_KIND;
   /**
    * Defines the shape of the button.
-   * @default SHAPE.default
+   * @default BUTTON_SHAPE.default
    */
-  shape?: SHAPE;
+  shape?: BUTTON_SHAPE;
   /**
    * Defines the size of the button
-   * @default SIZE.default
+   * @default BUTTON_SIZE.default
    */
-  size?: SIZE;
+  size?: BUTTON_SIZE;
 
   /**
    * @default false
@@ -58,12 +54,12 @@ export interface ButtonProps {
    * A helper rendered at the start of the button.
    * @default undefined
    */
-  startEnhancer?: ReactNode | FC;
+  startEnhancer?: FC<ViewProps>;
   /**
    * A helper rendered at the end of the button.
    * @default undefined
    */
-  endEnhancer?: ReactNode | FC;
+  endEnhancer?: FC<ViewProps>;
 
   /**
    * Button content.
@@ -71,7 +67,6 @@ export interface ButtonProps {
    */
   children?: ReactNode | ReactNode[] | string;
 
-  style?: StyleProp<ViewStyle>;
   // callbacks
   /**
    * An action to be fired when button is pressed.

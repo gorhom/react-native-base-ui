@@ -1,11 +1,11 @@
-enum KIND {
+enum BUTTON_KIND {
   primary = 'primary',
   secondary = 'secondary',
   tertiary = 'tertiary',
   minimal = 'minimal',
 }
 
-enum SHAPE {
+enum BUTTON_SHAPE {
   default = 'default',
   pill = 'pill',
   // @todo, maybe delete this one
@@ -14,11 +14,11 @@ enum SHAPE {
   square = 'square',
 }
 
-enum SIZE {
+enum BUTTON_SIZE {
   default = 'default',
   large = 'large',
   compact = 'compact',
   mini = 'mini',
 }
 
-export { KIND, SHAPE, SIZE };
+export { BUTTON_KIND, BUTTON_SHAPE, BUTTON_SIZE };

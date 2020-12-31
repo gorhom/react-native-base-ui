@@ -1,15 +1,15 @@
+import React from 'react';
 import {
   addDecorator,
   configure,
   getStorybookUI,
 } from '@storybook/react-native';
-import { withThemeProvider } from './decorators/withThemeProvider';
 import { withCenterView } from './decorators/withCenterView';
 import { withKnobs } from '@storybook/addon-knobs';
+import Container from './Container';
 
 // add decorators
 addDecorator(withCenterView);
-addDecorator(withThemeProvider);
 addDecorator(withKnobs);
 
 configure(() => {
@@ -23,4 +23,4 @@ const Storybook = getStorybookUI({
   onDeviceUI: false,
 });
 
-export default Storybook;
+export default () => <Container children={Storybook} />;

@@ -23,4 +23,9 @@ export const sizing: Sizing = {
   scale2400: 96,
   scale3200: 128,
   scale4800: 192,
+
+  IconXSmall: 12,
+  IconSmall: 16,
+  IconMedium: 20,
+  IconLarge: 24,
 };

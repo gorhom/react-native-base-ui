@@ -1,23 +1,24 @@
 import React, { useMemo } from 'react';
 import { isValidElementType } from 'react-is';
-
+import { mergeDeep } from '../utilities';
+import { useTheme } from './useTheme';
 import type { Style, Theme } from '../themes/types';
 import type { Override, OverrideObject } from '../types';
-import { useTheme } from './useTheme';
+
+const isOverrideComponent = (override?: Override) => {
+  if (isValidElementType(override)) {
+    return true;
+  }
+
+  return false;
+};
 
 const getOverrideComponent = (
   override?: Override
 ): React.ComponentType<any> | undefined => {
-  if (!override) {
-    return undefined;
-  }
-  if (isValidElementType(override)) {
+  if (isOverrideComponent(override)) {
     return override as React.ComponentType<any>;
   }
-  if (override && typeof override === 'object') {
-    return override.component;
-  }
-
   return undefined;
 };
 
@@ -33,15 +34,50 @@ const getOverrideStyle = (
     return override.style(theme);
   }
 
-  // @ts-ignore
-  return override?.style;
+  return (override as OverrideObject<any>)?.style ?? {};
+};
+
+const getMergedStyle = (
+  theme: Theme,
+  providedStyles?: Style | Partial<Style[]>,
+  override?: Override
+): Partial<Style[]> => {
+  const style = [];
+  if (Array.isArray(providedStyles)) {
+    style.push(...providedStyles);
+  } else {
+    style.push(providedStyles);
+  }
+  style.push(getOverrideStyle(theme, override));
+  return style;
+};
+
+const getComponentProps = (
+  theme: Theme,
+  providedStyles?: Style | Partial<Style[]>,
+  override?: Override
+) => {
+  const containerStyle = getMergedStyle(theme, providedStyles, override);
+  const props = {
+    style: containerStyle,
+    $style: containerStyle,
+  };
+
+  if (isOverrideComponent(override)) {
+    return props;
+  }
+
+  return mergeDeep(
+    Object.assign({}, props),
+    (override as OverrideObject<any>)?.props ?? {}
+  );
 };
 
 export const useOverrideComponent = <T>(
   defaultComponent: React.ComponentType<T>,
-  defaultStyle: Style,
+  providedStyles?: Style | Partial<Style[]>,
   override?: Override
-): [React.ComponentType<T>, T] => {
+): [React.ComponentType<T>, Partial<T>] => {
   ///#region hooks
   const theme = useTheme();
   //#endregion
@@ -55,11 +91,8 @@ export const useOverrideComponent = <T>(
   );
 
   const props = useMemo<any>(
-    () => ({
-      ...(override && 'props' in override ? override?.props : {}),
-      style: [defaultStyle, getOverrideStyle(theme, override)],
-    }),
-    [override, defaultStyle, theme]
+    () => getComponentProps(theme, providedStyles, override),
+    [override, providedStyles, theme]
   );
   //#endregion
 
