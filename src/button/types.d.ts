@@ -5,7 +5,7 @@ import type {
   ViewProps,
   ViewStyle,
 } from 'react-native';
-import type { Override } from '../types';
+import type { Override, BaseUIComponent } from '../types';
 import type { BUTTON_KIND, BUTTON_SHAPE, BUTTON_SIZE } from './constants';
 
 export interface ButtonOverrides {
@@ -16,12 +16,8 @@ export interface ButtonOverrides {
   endEnhancer?: Override<ViewProps>;
 }
 
-export interface ButtonProps {
-  /**
-   * Defines the button overrides.
-   * @default undefined
-   */
-  overrides?: ButtonOverrides;
+export interface ButtonProps
+  extends BaseUIComponent<ButtonOverrides, ViewStyle> {
   /**
    * Defines the kind (purpose) of a button.
    * @default BUTTON_KIND.primary
@@ -71,7 +67,6 @@ export interface ButtonProps {
    */
   children?: ReactNode | ReactNode[] | string;
 
-  style?: ViewStyle;
   // callbacks
   /**
    * An action to be fired when button is pressed.

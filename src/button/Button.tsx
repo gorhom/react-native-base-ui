@@ -18,7 +18,7 @@ const Button = ({
   isLoading = false,
   isSelected = false,
   disabled = false,
-  style,
+  $style,
   // callbacks
   onPress,
   // components
@@ -41,7 +41,7 @@ const Button = ({
   //#region components
   const [BaseButton, BaseButtonProps] = useOverrideComponent(
     TouchableOpacity,
-    [styles.baseButton, style],
+    [styles.baseButton, $style],
     overrides?.baseButton
   );
 

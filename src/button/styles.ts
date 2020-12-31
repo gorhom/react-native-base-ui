@@ -1,8 +1,8 @@
-import { createStyles, Theme } from '@gorhom/base-ui';
+import { createThemedStyles, Theme } from '@gorhom/base-ui';
 import { BUTTON_KIND, BUTTON_SIZE, BUTTON_SHAPE } from './constants';
 import type { ButtonOverrides } from './types';
 
-export const stylesCreator = createStyles<ButtonOverrides>(
+export const stylesCreator = createThemedStyles<ButtonOverrides>(
   (
     theme,
     kind: BUTTON_KIND,

@@ -97,7 +97,7 @@ storiesOf('Button', module)
         },
         content: {
           style: (theme: Theme) => ({
-            color: theme.colors.accent100,
+            color: theme.colors.inputFillError,
           }),
         },
       }}
