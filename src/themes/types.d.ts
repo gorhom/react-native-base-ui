@@ -317,6 +317,11 @@ export interface Sizing {
   scale2400: number;
   scale3200: number;
   scale4800: number;
+
+  IconXSmall: number;
+  IconSmall: number;
+  IconMedium: number;
+  IconLarge: number;
 }
 
 export interface Colors
