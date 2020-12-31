@@ -18,9 +18,10 @@ const Enhancer = ({ children: Component = null, style }: EnhancerProps) => {
   }
 
   return (
-    <View style={style}>
-      <Component />
-    </View>
+    <Component
+      // @ts-ignore
+      style={[styles.container, style]}
+    />
   );
   //#endregion
 };

@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { createStyles } from '@gorhom/base-ui';
 
-export const styles = StyleSheet.create({
+export const styles = createStyles({
   container: {
     alignItems: 'center',
     alignContent: 'center',
