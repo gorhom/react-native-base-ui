@@ -36,6 +36,7 @@ const Input = forwardRef<RNTextInput, InputProps>(
       size = INPUT_SIZE.default,
       // text input props
       value: _providedValue = '',
+      secureTextEntry: _providedSecureTextEntry,
       // enhancers
       startEnhancer = null,
       endEnhancer = null,
@@ -49,8 +50,9 @@ const Input = forwardRef<RNTextInput, InputProps>(
   ) => {
     //#region state/refs
     const [value, setValue] = useState(_providedValue);
-    const inputRef = useRef<RNTextInput>(null);
     const [focused, setFocused] = useState(false);
+    const [masked, setMasked] = useState(_providedSecureTextEntry);
+    const inputRef = useRef<RNTextInput>(null);
     //#endregion
 
     //#region variables
@@ -65,7 +67,10 @@ const Input = forwardRef<RNTextInput, InputProps>(
           : INPUT_ADJOINED.none,
       [startEnhancer, endEnhancer]
     );
-    const hasIconTrailing = useMemo(() => clearable, [clearable]);
+    const hasIconTrailing = useMemo(
+      () => clearable || _providedSecureTextEntry,
+      [clearable, _providedSecureTextEntry]
+    );
     //#endregion
 
     //#region styles
@@ -120,6 +125,32 @@ const Input = forwardRef<RNTextInput, InputProps>(
       styles.clearIcon,
       overrides?.clearIcon
     );
+
+    const [
+      MaskToggleContainer,
+      maskToggleContainerProps,
+    ] = useOverrideComponent(
+      Button,
+      styles.maskToggleContainer,
+      overrides?.maskToggleContainer
+    );
+
+    const [MaskToggleHideIcon, maskToggleHideIconProps] = useOverrideComponent(
+      Icon,
+      styles.maskToggleHideIcon,
+      overrides?.maskToggleHideIcon
+    );
+
+    const [MaskToggleShowIcon, maskToggleShowIconProps] = useOverrideComponent(
+      Icon,
+      styles.maskToggleShowIcon,
+      overrides?.maskToggleShowIcon
+    );
+    console.log(
+      'maskToggleShowIcon',
+      styles.maskToggleShowIcon,
+      maskToggleShowIconProps
+    );
     //#endregion
 
     //#region variables
@@ -130,11 +161,12 @@ const Input = forwardRef<RNTextInput, InputProps>(
      */
     const placeholderTextColor = useMemo(
       // @ts-ignore
-      () => Object.assign({}, ...textInputProps.style).placeholder,
+      () => textInputProps.style.placeholder,
       [textInputProps.style]
     );
     const selectionColor = useMemo(
-      () => Object.assign({}, ...textInputProps.style).caretColor,
+      // @ts-ignore
+      () => textInputProps.style.caretColor,
       [textInputProps.style]
     );
     //#endregion
@@ -179,6 +211,9 @@ const Input = forwardRef<RNTextInput, InputProps>(
     const handleOnClear = useCallback(() => {
       setValue('');
     }, []);
+    const handleOnMaskTogglePress = useCallback(() => {
+      setMasked(state => !state);
+    }, []);
     //#endregion
 
     //#region forward ref
@@ -206,6 +241,7 @@ const Input = forwardRef<RNTextInput, InputProps>(
           onFocus={handleOnFocus}
           onBlur={handleOnBlur}
           value={value}
+          secureTextEntry={masked}
           {...restInputProps}
           {...textInputProps}
         />
@@ -220,6 +256,20 @@ const Input = forwardRef<RNTextInput, InputProps>(
             <ClearIcon name="delete-alt" {...clearIconProps} />
           </ClearIconContainer>
         ) : null}
+        {_providedSecureTextEntry && (
+          <MaskToggleContainer
+            kind={BUTTON_KIND.minimal}
+            size={BUTTON_SIZE.mini}
+            onPress={handleOnMaskTogglePress}
+            {...maskToggleContainerProps}
+          >
+            {masked ? (
+              <MaskToggleShowIcon name="show" {...maskToggleShowIconProps} />
+            ) : (
+              <MaskToggleHideIcon name="hide" {...maskToggleHideIconProps} />
+            )}
+          </MaskToggleContainer>
+        )}
         <EndEnhancer {...endEnhancerProps} children={endEnhancer} />
       </Container>
     );

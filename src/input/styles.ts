@@ -1,10 +1,9 @@
-import { createStyles } from '@gorhom/base-ui';
+import { createThemedStyles, Theme } from '@gorhom/base-ui';
 import type { ViewStyle } from 'react-native';
 import { INPUT_ADJOINED, INPUT_SIZE } from './constants';
-import type { Theme } from '../themes';
 import type { InputOverrides } from './types';
 
-export const stylesCreator = createStyles<InputOverrides>(
+export const stylesCreator = createThemedStyles<InputOverrides>(
   (
     theme,
     size,
@@ -24,7 +23,7 @@ export const stylesCreator = createStyles<InputOverrides>(
       borderStyle: 'solid',
       borderRadius: theme.borders.inputBorderRadius,
       ...getRootColors(theme, positive, error, disabled, isFocused),
-      ...getRootPadding(theme, adjoined, hasIconTrailing),
+      ...getRootPadding(theme, size, adjoined, hasIconTrailing),
     },
     baseInput: {
       flex: 1,
@@ -64,7 +63,22 @@ export const stylesCreator = createStyles<InputOverrides>(
       marginEnd: 0,
       ...getInputEnhancerPadding(theme, size),
     },
-    clearIcon: {},
+    clearIcon: {
+      ...getIconSize(theme, size),
+    },
+    maskToggleContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginStart: 0,
+      marginEnd: 0,
+      ...getInputEnhancerPadding(theme, size),
+    },
+    maskToggleHideIcon: {
+      ...getIconSize(theme, size),
+    },
+    maskToggleShowIcon: {
+      ...getIconSize(theme, size),
+    },
   })
 );
 
@@ -106,6 +120,7 @@ const getRootColors = (
 // @TODO
 const getRootPadding = (
   theme: Theme,
+  size: INPUT_SIZE,
   adjoined: INPUT_ADJOINED,
   hasIconTrailing: boolean
 ) => {
@@ -116,8 +131,8 @@ const getRootPadding = (
     adjoined === INPUT_ADJOINED.end ||
     hasIconTrailing;
   return {
-    paddingStart: hasStartPadding ? theme.sizing.scale550 : 0,
-    paddingEnd: hasEndPadding ? theme.sizing.scale550 : 0,
+    paddingStart: hasStartPadding ? theme.sizing.scale550 / 2 : 0,
+    paddingEnd: hasEndPadding ? theme.sizing.scale550 / 2 : 0,
   };
 };
 
@@ -201,21 +216,25 @@ const getInputEnhancerPadding = (theme: Theme, size: INPUT_SIZE): ViewStyle => {
   switch (size) {
     case INPUT_SIZE.mini:
       return {
+        paddingVertical: 0,
         paddingHorizontal: theme.sizing.scale400,
       };
 
     case INPUT_SIZE.compact:
       return {
+        paddingVertical: 0,
         paddingHorizontal: theme.sizing.scale400,
       };
 
     case INPUT_SIZE.default:
       return {
+        paddingVertical: 0,
         paddingHorizontal: theme.sizing.scale300,
       };
 
     case INPUT_SIZE.large:
       return {
+        paddingVertical: 0,
         paddingHorizontal: theme.sizing.scale200,
       };
 
@@ -226,10 +245,10 @@ const getInputEnhancerPadding = (theme: Theme, size: INPUT_SIZE): ViewStyle => {
 
 const getInputEnhancerColors = (
   theme: Theme,
-  disabled,
-  isFocused,
-  error,
-  positive
+  disabled: boolean,
+  isFocused: boolean,
+  error: boolean,
+  positive: boolean
 ) => {
   if (disabled) {
     return {
@@ -257,4 +276,30 @@ const getInputEnhancerColors = (
       backgroundColor: theme.colors.inputFill,
     };
   }
+};
+
+const getIconSize = (theme: Theme, size: INPUT_SIZE) => {
+  let iconSize: number;
+  switch (size) {
+    case INPUT_SIZE.mini:
+      iconSize = theme.sizing.IconXSmall;
+      break;
+
+    case INPUT_SIZE.compact:
+      iconSize = theme.sizing.IconSmall;
+      break;
+
+    case INPUT_SIZE.large:
+      iconSize = theme.sizing.IconLarge;
+      break;
+
+    case INPUT_SIZE.default:
+    default:
+      iconSize = theme.sizing.IconMedium;
+      break;
+  }
+
+  return {
+    fontSize: iconSize,
+  };
 };

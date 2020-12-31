@@ -1,6 +1,6 @@
-import type { TextInputProps, ViewProps } from 'react-native';
+import type { TextInputProps, ViewProps, ViewStyle } from 'react-native';
 import type { IconProps } from '../icon';
-import type { Override } from '../types';
+import type { BaseUIComponent, Override } from '../types';
 import type { INPUT_SIZE } from './constants';
 
 export interface InputOverrides {
@@ -11,15 +11,14 @@ export interface InputOverrides {
   endEnhancer?: Override<ViewProps>;
   clearIcon?: Override<IconProps>;
   clearIconContainer?: Override<ViewProps>;
+  maskToggleHideIcon?: Override<IconProps>;
+  maskToggleShowIcon?: Override<IconProps>;
+  maskToggleContainer: Override<ViewProps>;
 }
 
 export interface InputProps
-  extends Omit<TextInputProps, 'style' | 'multiline'> {
-  /**
-   * Defines the input overrides.
-   * @default undefined
-   */
-  overrides?: InputOverrides;
+  extends BaseUIComponent<InputOverrides, ViewStyle>,
+    Omit<TextInputProps, 'style' | 'multiline'> {
   // configs
   /**
    * Renders component in 'positive' state.

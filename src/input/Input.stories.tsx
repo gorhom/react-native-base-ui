@@ -39,6 +39,18 @@ storiesOf('Input', module)
   .add('with placeholder', () => (
     <Input placeholder="Hello World" {...createProps()} />
   ))
+  .add('with clearable', () => (
+    <Input value="Hello World" {...createProps()} clearable={true} />
+  ))
+  .add('with secure text', () => (
+    <Input
+      {...createProps()}
+      value="123"
+      clearable={true}
+      secureTextEntry={true}
+      endEnhancer={DummyEnhancer}
+    />
+  ))
   .add('with start enhancer', () => (
     <Input {...createProps()} startEnhancer={DummyEnhancer} />
   ))
