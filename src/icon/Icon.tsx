@@ -6,7 +6,13 @@ import { stylesCreator } from './styles';
 
 import type { IconProps } from './types';
 
-const Icon = ({ overrides, name, size = DEFAULT_SIZE, color }: IconProps) => {
+const Icon = ({
+  overrides,
+  name,
+  size = DEFAULT_SIZE,
+  color,
+  $style,
+}: IconProps) => {
   //#region variables
   const iconChar = useMemo(() => ICON_SETS[name], [name]);
   //#endregion
@@ -18,7 +24,7 @@ const Icon = ({ overrides, name, size = DEFAULT_SIZE, color }: IconProps) => {
   //#region override components
   const [RootView, RootViewProps] = useOverrideComponent(
     Text,
-    styles.container,
+    [styles.container, $style],
     overrides?.container
   );
   //#endregion

@@ -1,5 +1,5 @@
-import type { TextProps } from 'react-native';
-import type { Override } from '../types';
+import type { TextProps, TextStyle } from 'react-native';
+import type { BaseUIComponent, Override } from '../types';
 import type { ICON_SETS } from './constants';
 
 export type ICON_NAME = keyof typeof ICON_SETS;
@@ -9,13 +9,7 @@ export interface IconOverrides {
   container?: Override<TextProps>;
 }
 
-export interface IconProps {
-  /**
-   * Defines the icon overrides.
-   * @default undefined
-   */
-  overrides?: IconOverrides;
-
+export interface IconProps extends BaseUIComponent<IconOverrides, TextStyle> {
   /**
    * Defines the icon name.
    */
