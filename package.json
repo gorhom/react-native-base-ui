@@ -1,6 +1,6 @@
 {
   "name": "@gorhom/base-ui",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "base ui",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
