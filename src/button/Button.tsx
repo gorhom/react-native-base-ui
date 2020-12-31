@@ -39,36 +39,36 @@ const Button = ({
   //#endregion
 
   //#region components
-  const [BaseButton, BaseButtonProps] = useOverrideComponent(
+  const [BaseButton, baseButtonProps] = useOverrideComponent(
     TouchableOpacity,
     [styles.baseButton, $style],
     overrides?.baseButton
   );
 
-  const [StartEnhancer, StartEnhancerProps] = useOverrideComponent(
+  const [StartEnhancer, startEnhancerProps] = useOverrideComponent(
     Enhancer,
     styles.startEnhancer,
     overrides?.startEnhancer
   );
 
-  const [EndEnhancer, EndEnhancerProps] = useOverrideComponent(
+  const [EndEnhancer, endEnhancerProps] = useOverrideComponent(
     Enhancer,
     styles.endEnhancer,
     overrides?.endEnhancer
   );
 
-  const [Content, ContentProps] = useOverrideComponent(
+  const [Content, contentProps] = useOverrideComponent(
     ButtonContent,
     styles.content,
     overrides?.content
   );
   //#endregion
   return (
-    <BaseButton {...BaseButtonProps} onPress={onPress}>
+    <BaseButton {...baseButtonProps} onPress={onPress}>
       <>
-        <StartEnhancer {...StartEnhancerProps} children={startEnhancer} />
-        <Content {...ContentProps} children={children} />
-        <EndEnhancer {...EndEnhancerProps} children={endEnhancer} />
+        <StartEnhancer {...startEnhancerProps} children={startEnhancer} />
+        <Content {...contentProps} children={children} />
+        <EndEnhancer {...endEnhancerProps} children={endEnhancer} />
       </>
     </BaseButton>
   );

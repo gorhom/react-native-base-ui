@@ -52,10 +52,10 @@ export interface InputProps
    * A helper rendered at the start of the input.
    * @default undefined
    */
-  startEnhancer?: FC;
+  startEnhancer?: FC | string;
   /**
    * A helper rendered at the end of the input.
    * @default undefined
    */
-  endEnhancer?: FC;
+  endEnhancer?: FC | string;
 }

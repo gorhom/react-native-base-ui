@@ -1,4 +1,4 @@
-import { createThemedStyles, Theme } from '@gorhom/base-ui';
+import { createThemedStyles, Theme } from '../themes';
 import type { ViewStyle } from 'react-native';
 import { INPUT_ADJOINED, INPUT_SIZE } from './constants';
 import type { InputOverrides } from './types';
@@ -120,6 +120,7 @@ const getRootColors = (
 // @TODO
 const getRootPadding = (
   theme: Theme,
+  // @ts-ignore
   size: INPUT_SIZE,
   adjoined: INPUT_ADJOINED,
   hasIconTrailing: boolean

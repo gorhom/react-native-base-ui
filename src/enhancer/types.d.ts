@@ -3,5 +3,5 @@ import type { ViewStyle } from 'react-native';
 
 export interface EnhancerProps {
   style?: ViewStyle;
-  children?: null | FC;
+  children?: null | FC | string;
 }

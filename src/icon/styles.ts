@@ -1,4 +1,4 @@
-import { createThemedStyles } from '@gorhom/base-ui';
+import { createThemedStyles } from '../themes';
 import type { IconOverrides } from './types';
 
 export const stylesCreator = createThemedStyles<IconOverrides>(

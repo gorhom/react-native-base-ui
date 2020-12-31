@@ -57,7 +57,7 @@ const props = (): ButtonProps => ({
   onPress: action('clicked'),
 });
 
-const DummyEnhancer = () => <Text>🔥</Text>;
+const DummyEnhancer = '🔥';
 
 storiesOf('Button', module)
   .add('with text', () => (

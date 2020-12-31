@@ -54,12 +54,12 @@ export interface ButtonProps
    * A helper rendered at the start of the button.
    * @default undefined
    */
-  startEnhancer?: FC<ViewProps>;
+  startEnhancer?: FC<ViewProps> | string;
   /**
    * A helper rendered at the end of the button.
    * @default undefined
    */
-  endEnhancer?: FC<ViewProps>;
+  endEnhancer?: FC<ViewProps> | string;
 
   /**
    * Button content.

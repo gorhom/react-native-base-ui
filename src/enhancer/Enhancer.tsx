@@ -1,5 +1,5 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React, { cloneElement } from 'react';
+import { Text } from 'react-native';
 import { styles } from './styles';
 import type { EnhancerProps } from './types';
 
@@ -14,7 +14,13 @@ const Enhancer = ({ children: Component = null, style }: EnhancerProps) => {
   }
 
   if (typeof Component === 'object') {
-    return <View style={style}>{Component}</View>;
+    //@ts-ignore
+    return cloneElement(Component, {
+      //@ts-ignore
+      ...Component.props,
+      //@ts-ignore
+      style: [styles.container, style, Component.props.style],
+    });
   }
 
   return (

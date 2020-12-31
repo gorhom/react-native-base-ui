@@ -1,4 +1,4 @@
-import { createStyles } from '@gorhom/base-ui';
+import { createStyles } from '../themes';
 
 export const styles = createStyles({
   container: {

@@ -1,4 +1,4 @@
-import { createThemedStyles, Theme } from '@gorhom/base-ui';
+import { createThemedStyles, Theme } from '../themes';
 import { BUTTON_KIND, BUTTON_SIZE, BUTTON_SHAPE } from './constants';
 import type { ButtonOverrides } from './types';
 
@@ -19,12 +19,13 @@ export const stylesCreator = createThemedStyles<ButtonOverrides>(
       ...getBorderRadiusStyles(theme, shape, size),
       ...getPaddingStyles(theme, shape, size),
       ...getKindStyles(theme, kind, isLoading, isSelected, disabled),
-      ...getShapeStyles(theme, shape, size),
+      ...getShapeStyles(shape, size),
     },
     content: {
+      flexGrow: 1,
       ...getContentStyles(theme, kind, isLoading, isSelected, disabled),
       ...getFontStyles(theme, size),
-      lineHeight: getShapeStyles(theme, shape, size).height,
+      lineHeight: getShapeStyles(shape, size).height,
       textAlign: 'center',
     },
     startEnhancer: {
@@ -121,11 +122,7 @@ const getPaddingStyles = (
   }
 };
 
-const getShapeStyles = (
-  theme: Theme,
-  shape: BUTTON_SHAPE,
-  size: BUTTON_SIZE
-) => {
+const getShapeStyles = (shape: BUTTON_SHAPE, size: BUTTON_SIZE) => {
   if (shape === BUTTON_SHAPE.circle || shape === BUTTON_SHAPE.square) {
     let height, width;
     switch (size) {
@@ -161,6 +158,7 @@ const getShapeStyles = (
 const getContentStyles = (
   theme: Theme,
   kind: BUTTON_KIND,
+  // @ts-ignore
   isLoading: boolean,
   isSelected: boolean,
   disabled: boolean
@@ -213,6 +211,7 @@ const getContentStyles = (
 const getKindStyles = (
   theme: Theme,
   kind: BUTTON_KIND,
+  // @ts-ignore
   isLoading: boolean,
   isSelected: boolean,
   disabled: boolean
