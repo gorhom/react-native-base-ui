@@ -6,7 +6,7 @@ import {
   LightTheme,
   ThemeProvider,
 } from '@gorhom/base-ui';
-import Button, { BUTTON_SHAPE } from '@gorhom/base-ui/button';
+import { Button, BUTTON_SHAPE } from '@gorhom/base-ui/components/button';
 
 const Container = ({ children: Children }: any) => {
   //#region state

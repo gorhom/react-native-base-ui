@@ -5,7 +5,7 @@ import type {
   ViewProps,
   ViewStyle,
 } from 'react-native';
-import type { Override, BaseUIComponent } from '../types';
+import type { Override, BaseUIComponent } from '../../types';
 import type { BUTTON_KIND, BUTTON_SHAPE, BUTTON_SIZE } from './constants';
 
 export interface ButtonOverrides {

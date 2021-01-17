@@ -14,10 +14,10 @@ import {
   NativeSyntheticEvent,
   TextInputChangeEventData,
 } from 'react-native';
-import Enhancer from '../enhancer';
-import Icon from '../icon';
-import Button, { BUTTON_KIND, BUTTON_SIZE } from '../button';
-import { useOverrideComponent, useThemedStyle } from '../hooks';
+import { Enhancer } from '../enhancer';
+import { Icon } from '../icon';
+import { Button, BUTTON_KIND, BUTTON_SIZE } from '../button';
+import { useOverrideComponent, useThemedStyle } from '../../hooks';
 import { INPUT_SIZE, INPUT_ADJOINED, DEFAULT_CLEARABLE } from './constants';
 import { stylesCreator } from './styles';
 

@@ -1,4 +1,4 @@
-import { createStyles } from '../themes';
+import { createStyles } from '../../themes';
 
 export const styles = createStyles({
   container: {

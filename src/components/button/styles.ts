@@ -1,4 +1,4 @@
-import { createThemedStyles, Theme } from '../themes';
+import { createThemedStyles, Theme } from '../../themes';
 import { BUTTON_KIND, BUTTON_SIZE, BUTTON_SHAPE } from './constants';
 import type { ButtonOverrides } from './types';
 

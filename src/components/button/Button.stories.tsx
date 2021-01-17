@@ -6,7 +6,7 @@ import { optionsKnob, boolean } from '@storybook/addon-knobs';
 import Button from './Button';
 import { BUTTON_KIND, BUTTON_SHAPE, BUTTON_SIZE } from './constants';
 import type { ButtonProps } from './types';
-import type { Theme } from '../themes';
+import type { Theme } from '../../themes';
 
 const props = (): ButtonProps => ({
   kind: optionsKnob(

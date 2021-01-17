@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Text } from 'react-native';
-import { useThemedStyle, useOverrideComponent } from '../hooks';
+import { useThemedStyle, useOverrideComponent } from '../../hooks';
 import { DEFAULT_SIZE, ICON_SETS } from './constants';
 import { stylesCreator } from './styles';
 

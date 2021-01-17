@@ -1,5 +1,5 @@
 import type { TextProps, TextStyle } from 'react-native';
-import type { BaseUIComponent, Override } from '../types';
+import type { BaseUIComponent, Override } from '../../types';
 import type { ICON_SETS } from './constants';
 
 export type ICON_NAME = keyof typeof ICON_SETS;

@@ -11,3 +11,10 @@ html,
   width: 100%;
   flex: 1;
 }
+
+@font-face {
+  font-family: 'baseui-icons';
+  src: url(../../fonts/baseui-icons.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

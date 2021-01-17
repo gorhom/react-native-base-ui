@@ -1,4 +1,4 @@
-import { createThemedStyles } from '../themes';
+import { createThemedStyles } from '../../themes';
 import type { TypographyOverrides } from './types';
 
 export const stylesCreator = createThemedStyles<TypographyOverrides>(

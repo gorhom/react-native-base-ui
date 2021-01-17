@@ -1,4 +1,4 @@
-enum COLOR {
+enum TYPOGRAPHY_COLOR {
   contentPrimary = 'contentPrimary',
   contentSecondary = 'contentSecondary',
   contentTertiary = 'contentTertiary',
@@ -7,7 +7,7 @@ enum COLOR {
   contentInverseTertiary = 'contentInverseTertiary',
 }
 
-enum FONT {
+enum TYPOGRAPHY_FONT {
   ParagraphXSmall = 'ParagraphXSmall',
   ParagraphSmall = 'ParagraphSmall',
   ParagraphMedium = 'ParagraphMedium',
@@ -30,4 +30,4 @@ enum FONT {
   CaptionSmall = 'CaptionSmall',
 }
 
-export { COLOR, FONT };
+export { TYPOGRAPHY_COLOR, TYPOGRAPHY_FONT };

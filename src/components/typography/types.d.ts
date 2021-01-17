@@ -1,6 +1,6 @@
-import type { TextProps, TextStyle } from 'react-native';
-import type { BaseUIComponent } from '../types';
-import type { COLOR, FONT } from './constants';
+import type { TextStyle } from 'react-native';
+import type { BaseUIComponent } from '../../types';
+import type { TYPOGRAPHY_COLOR, TYPOGRAPHY_FONT } from './constants';
 
 export interface TypographyOverrides {
   [key: string]: Override<any>;
@@ -13,9 +13,9 @@ export interface TypographyProps
    * Defines the color of the typography.
    * @default contentPrimary
    */
-  color?: string | COLOR;
+  color?: TYPOGRAPHY_COLOR;
   /**
    * Defines the font of the typography.
    */
-  font?: string | FONT;
+  font?: TYPOGRAPHY_FONT;
 }

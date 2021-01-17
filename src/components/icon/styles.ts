@@ -1,4 +1,4 @@
-import { createThemedStyles } from '../themes';
+import { createThemedStyles } from '../../themes';
 import type { IconOverrides } from './types';
 
 export const stylesCreator = createThemedStyles<IconOverrides>(

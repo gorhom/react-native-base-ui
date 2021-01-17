@@ -1,4 +1,4 @@
-import { createThemedStyles, Theme } from '../themes';
+import { createThemedStyles, Theme } from '../../themes';
 import type { ViewStyle } from 'react-native';
 import { INPUT_ADJOINED, INPUT_SIZE } from './constants';
 import type { InputOverrides } from './types';

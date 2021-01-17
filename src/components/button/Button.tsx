@@ -1,8 +1,8 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
-import Enhancer from '../enhancer';
+import { Enhancer } from '../enhancer';
 import ButtonContent from './ButtonContent';
-import { useThemedStyle, useOverrideComponent } from '../hooks';
+import { useThemedStyle, useOverrideComponent } from '../../hooks';
 import { stylesCreator } from './styles';
 import { BUTTON_KIND, BUTTON_SHAPE, BUTTON_SIZE } from './constants';
 

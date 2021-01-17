@@ -1,6 +1,6 @@
 import type { TextInputProps, ViewProps, ViewStyle } from 'react-native';
 import type { IconProps } from '../icon';
-import type { BaseUIComponent, Override } from '../types';
+import type { BaseUIComponent, Override } from '../../types';
 import type { INPUT_SIZE } from './constants';
 
 export interface InputOverrides {
