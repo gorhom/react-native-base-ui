@@ -1,16 +1,18 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  title: 'React Native Base UI',
+  tagline:
+    'A React Native Component library implementing the Base design language.',
+  url: 'https://gorhom.github.io',
+  baseUrl: '/react-native-base-ui/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'gorhom',
+  projectName: 'react-native-base-ui',
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Base UI',
+      hideOnScroll: true,
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -24,7 +26,7 @@ module.exports = {
         },
         { to: 'blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/gorhom/react-native-base-ui',
           label: 'GitHub',
           position: 'right',
         },
