@@ -2,7 +2,7 @@
 
 Base is a design system comprised of modern, responsive, living components. Base UI is the React Native implementation of Base.
 
-[![Base UI](https://img.shields.io/npm/v/gorhom/base-ui?style=flat-square)](https://www.npmjs.com/package/@gorhom/base-ui) [![npm](https://img.shields.io/npm/l/@gorhom/base-ui?style=flat-square)](https://www.npmjs.com/package/@gorhom/base-ui) [![npm](https://img.shields.io/badge/types-included-blue?style=flat-square)](https://www.npmjs.com/package/@gorhom/base-ui) [![runs with expo](https://img.shields.io/badge/Runs%20with%20Expo-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.io/)
+[![Base UI](https://img.shields.io/npm/v/@gorhom/base-ui?style=flat-square)](https://www.npmjs.com/package/@gorhom/base-ui) [![npm](https://img.shields.io/npm/l/@gorhom/base-ui?style=flat-square)](https://www.npmjs.com/package/@gorhom/base-ui) [![npm](https://img.shields.io/badge/types-included-blue?style=flat-square)](https://www.npmjs.com/package/@gorhom/base-ui) [![runs with expo](https://img.shields.io/badge/Runs%20with%20Expo-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.io/)
 
 > This project is a re-written implementation of the **[Base Web](https://github.com/uber/baseweb)**, but for React Native, React Native Web & React Native Desktops (Windows, MacOS, Linux)
 
