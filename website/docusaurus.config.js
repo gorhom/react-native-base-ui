@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   title: 'React Native Base UI',
   tagline:
@@ -9,6 +11,9 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'gorhom',
   projectName: 'react-native-base-ui',
+  plugins: [path.resolve(__dirname, 'plugins/my-loaders')],
+  // scripts: [{ src: 'https://snack.expo.io/embed.js', defer: true }],
+  // clientModules: [require.resolve('./snackPlayerInitializer.js')],
   themeConfig: {
     navbar: {
       title: 'Base UI',
@@ -22,9 +27,9 @@ module.exports = {
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'Docs',
-          position: 'left',
+          position: 'right',
         },
-        { to: 'blog', label: 'Blog', position: 'left' },
+        { to: 'blog', label: 'Blog', position: 'right' },
         {
           href: 'https://github.com/gorhom/react-native-base-ui',
           label: 'GitHub',
@@ -81,6 +86,7 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
+    sidebarCollapsible: false,
   },
   presets: [
     [
@@ -91,6 +97,7 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
+          // remarkPlugins: [require('./plugins/snack-player')],
         },
         blog: {
           showReadingTime: true,
