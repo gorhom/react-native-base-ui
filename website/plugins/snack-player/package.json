@@ -1,0 +1,17 @@
+{
+  "name": "remark-snackplayer",
+  "version": "0.0.6",
+  "private": true,
+  "description": "Remark Expo Snack Plugin",
+  "main": "index.js",
+  "keywords": [
+    "remark",
+    "react-native",
+    "expo",
+    "snackplayer",
+    "preview"
+  ],
+  "files": [
+    "index"
+  ]
+}

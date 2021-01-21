@@ -29,12 +29,13 @@ export interface ButtonProps
    */
   shape?: BUTTON_SHAPE;
   /**
-   * Defines the size of the button
+   * Defines the size of the button.
    * @default BUTTON_SIZE.default
    */
   size?: BUTTON_SIZE;
 
   /**
+   * Indicates that the button is disabled.
    * @default false
    */
   disabled?: boolean;

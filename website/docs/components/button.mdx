@@ -1,0 +1,139 @@
+---
+id: button
+title: Button
+slug: /components/button
+---
+
+## Preview
+
+import { Text } from 'react-native';
+import { Button } from '@gorhom/base-ui';
+import { Yard } from '../../components/yard';
+
+<Yard>
+  <Button>
+    <Text>I'm a React Native component 🔥</Text>
+  </Button>
+</Yard>
+
+## Props
+
+### `kind`
+
+Defines the kind (purpose) of a button.
+
+| type                        | default             | required |
+| --------------------------- | ------------------- | -------- |
+| [BUTTON_KIND](#button_kind) | BUTTON_KIND.primary | NO       |
+
+### `shape`
+
+Defines the shape of the button.
+
+| type                          | default              | required |
+| ----------------------------- | -------------------- | -------- |
+| [BUTTON_SHAPE](#button_shape) | BUTTON_SHAPE.default | NO       |
+
+### `size`
+
+Defines the size of the button.
+
+| type                        | default             | required |
+| --------------------------- | ------------------- | -------- |
+| [BUTTON_SIZE](#button_size) | BUTTON_SIZE.default | NO       |
+
+### `disabled`
+
+Indicates that the button is disabled.
+
+| type    | default | required |
+| ------- | ------- | -------- |
+| boolean | false   | NO       |
+
+### `isSelected`
+
+Indicates that the button is selected.
+
+| type    | default | required |
+| ------- | ------- | -------- |
+| boolean | false   | NO       |
+
+### `isLoading`
+
+Show loading button style and spinner.
+
+| type    | default | required |
+| ------- | ------- | -------- |
+| boolean | false   | NO       |
+
+### `startEnhancer`
+
+A helper rendered at the start of the button.
+
+| type      | default   | required |
+| --------- | --------- | -------- |
+| ReactNode | undefined | NO       |
+
+### `endEnhancer`
+
+A helper rendered at the end of the button.
+
+| type      | default   | required |
+| --------- | --------- | -------- |
+| ReactNode | undefined | NO       |
+
+### `children`
+
+Button content.
+
+| type      | default   | required |
+| --------- | --------- | -------- |
+| ReactNode | undefined | NO       |
+
+### `onPress`
+
+An action to be fired when button is pressed.
+
+```ts
+type onPress = () => void;
+```
+
+| type     | default   | required |
+| -------- | --------- | -------- |
+| function | undefined | NO       |
+
+## Constants
+
+### `BUTTON_KIND`
+
+```ts
+enum BUTTON_KIND {
+  primary = 'primary',
+  secondary = 'secondary',
+  tertiary = 'tertiary',
+  minimal = 'minimal',
+}
+```
+
+### `BUTTON_SHAPE`
+
+```ts
+enum BUTTON_SHAPE {
+  default = 'default',
+  pill = 'pill',
+  round = 'round',
+  circle = 'circle',
+  square = 'square',
+}
+```
+
+### `BUTTON_SIZE`
+
+```ts
+enum BUTTON_SIZE {
+  default = 'default',
+  large = 'large',
+  compact = 'compact',
+  mini = 'mini',
+}
+```
