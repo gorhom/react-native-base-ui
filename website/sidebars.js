@@ -4,7 +4,7 @@ module.exports = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: ['doc1', 'doc2', 'doc3'],
+      items: ['getting-started'],
     },
     {
       type: 'category',

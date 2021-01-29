@@ -1,0 +1,120 @@
+---
+id: getting-started
+title: Getting Started
+slug: /
+sidebar_label: Overview
+description: A React Native Component library implementing the Base design language.
+keywords:
+  - base
+  - base-ui
+  - baseui
+  - basedesign
+  - base-design
+  - base-ios
+  - base-android
+  - base-macos
+  - base-windows
+  - react-native
+  - react-native-web
+  - react native
+  - react native web
+  - ios
+  - android
+  - macos
+  - windows
+  - web
+  - ui
+  - uikit
+  - component
+  - reanimated
+image: /img/base-ui-preview.jpg
+hide_title: true
+hide_table_of_contents: true
+---
+
+# React Native Base UI
+
+[![Base UI](https://img.shields.io/npm/v/@gorhom/base-ui?style=flat-square)](https://www.npmjs.com/package/@gorhom/base-ui) [![npm](https://img.shields.io/npm/l/@gorhom/base-ui?style=flat-square)](https://www.npmjs.com/package/@gorhom/base-ui) [![npm](https://img.shields.io/badge/types-included-blue?style=flat-square)](https://www.npmjs.com/package/@gorhom/base-ui) [![runs with expo](https://img.shields.io/badge/Runs%20with%20Expo-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.io/)
+
+Base is a design system comprised of modern, responsive, living components. Base UI is the React Native implementation of Base.
+
+![Base UI Preview](/img/base-ui-preview.jpg)
+
+> This project is a re-written implementation of the **[Base Web](https://github.com/uber/baseweb)**, but for React Native, React Native Web & React Native Desktops (Windows & MacOS)
+
+## Features
+
+- Extensibility components.
+- Multi-platform support.
+- Accessibility support.
+- Compatible with `Expo`.
+- Written in `TypeScript`.
+
+## Installation
+
+First you will need to install the library:
+
+```bash
+yarn add @gorhom/base-ui
+```
+
+### Install Icon Font
+
+To be able to use icons that come with this library, you will need to link the custom icon font file with your project as follows:
+
+#### Bare Project
+
+first, you will need to run
+
+```bash
+yarn react-native link
+```
+
+then re-build the native apps
+
+```bash
+# to re-build ios
+yarn ios
+
+# to re-build android
+yarn android
+```
+
+#### Expo
+
+first you need to install `expo-font`
+
+```bash
+expo install expo-font
+```
+
+then you will need to load the font at the root component
+
+```tsx
+const App = () => {
+  ...
+  const [loaded] = useFonts({
+    "baseui-icons": require("./node_modules/@gorhom/base-ui/fonts/baseui-icons.ttf"),
+  });
+  ...
+  return loaded ? (
+    // your app
+  ) : null
+}
+```
+
+read more about [Expo Fonts](https://docs.expo.io/versions/latest/sdk/font/)
+
+## Built With ❤️
+
+- [@react-native-community/bob](https://github.com/react-native-community/bob)
+
+## Liked the library? 😇
+
+<a rel="nofollow" href="https://www.buymeacoffee.com/gorhom" target="_blank">
+  <img
+    src="https://cdn.buymeacoffee.com/buttons/default-red.png"
+    alt="Buy Me A Coffee"
+    height="50"
+  />
+</a>
