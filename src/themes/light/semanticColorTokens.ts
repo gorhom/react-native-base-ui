@@ -6,7 +6,7 @@ import type {
 } from '../types.js';
 import { colorTokens } from './colorTokens';
 import { hexToRgba } from '../utilities';
-import { colors } from '../colors';
+import { colors } from '../shared/colors';
 
 export const getSemanticColorTokens = (
   foundation: ColorTokens = colorTokens

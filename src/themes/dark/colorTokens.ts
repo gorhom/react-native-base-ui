@@ -1,4 +1,4 @@
-import { colors } from '../colors';
+import { colors } from '../shared/colors';
 import type { ColorTokens } from '../types';
 
 export const colorTokens: ColorTokens = {
