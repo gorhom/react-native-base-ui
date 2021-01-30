@@ -146,11 +146,6 @@ const Input = forwardRef<RNTextInput, InputProps>(
       styles.maskToggleShowIcon,
       overrides?.maskToggleShowIcon
     );
-    console.log(
-      'maskToggleShowIcon',
-      styles.maskToggleShowIcon,
-      maskToggleShowIconProps
-    );
     //#endregion
 
     //#region variables
