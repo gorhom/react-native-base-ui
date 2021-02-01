@@ -24,6 +24,8 @@ export const stylesCreator = createThemedStyles<SpinnerOverrides>(
       height: size,
     },
     active: {
+      width: size,
+      height: size,
       color: activeColor || theme.colors.contentAccent,
     },
   })
