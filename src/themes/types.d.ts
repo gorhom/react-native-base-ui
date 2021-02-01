@@ -1,4 +1,29 @@
-import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
+import type {
+  ImageStyle,
+  TextStyle,
+  ViewStyle,
+  EasingFunction,
+} from 'react-native';
+
+export interface Animation {
+  timing100: number;
+  timing200: number;
+  timing300: number;
+  timing400: number;
+  timing500: number;
+  timing600: number;
+  timing700: number;
+  timing800: number;
+  timing900: number;
+  timing1000: number;
+  easeOutCurve: EasingFunction;
+  easeInCurve: EasingFunction;
+  easeInOutCurve: EasingFunction;
+  easeInQuinticCurve: EasingFunction;
+  easeOutQuinticCurve: EasingFunction;
+  easeInOutQuinticCurve: EasingFunction;
+  linearCurve: EasingFunction;
+}
 
 export interface ColorTokens {
   // Primary Palette
@@ -331,6 +356,7 @@ export interface Colors
 
 export interface Theme {
   name: string;
+  animation: Animation;
   borders: Borders;
   colors: Colors;
   sizing: Sizing;
