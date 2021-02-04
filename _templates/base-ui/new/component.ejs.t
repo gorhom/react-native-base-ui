@@ -3,7 +3,7 @@ to: ./src/<%=name%>/<%=Name%>.tsx
 ---
 import React from 'react';
 import { View } from 'react-native';
-import { useThemedStyle, useOverrideComponent } from '../hooks';
+import { useThemedStyle, useOverrideComponent } from '../../hooks';
 import { <%=name.toUpperCase()%>_TYPE } from './constants';
 import { stylesCreator } from './styles';
 
