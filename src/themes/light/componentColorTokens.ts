@@ -1,5 +1,6 @@
-import type { ColorTokens, ComponentColorTokens } from '../types';
+import { colors } from '../shared/colors';
 import { colorTokens } from './colorTokens';
+import type { ColorTokens, ComponentColorTokens } from '../types';
 
 export const getComponentColorTokens = (
   themePrimitives: ColorTokens = colorTokens
@@ -62,4 +63,85 @@ export const getComponentColorTokens = (
   inputEnhancerTextDisabled: themePrimitives.mono600,
   inputPlaceholder: themePrimitives.mono700,
   inputPlaceholderDisabled: themePrimitives.mono600,
+
+  // tag
+  // Custom ramps
+  tagFontDisabledRampUnit: '100',
+  tagOutlinedDisabledRampUnit: '200',
+  tagSolidFontRampUnit: '0',
+  tagSolidRampUnit: '400',
+  tagOutlinedFontRampUnit: '400',
+  tagOutlinedRampUnit: '200',
+
+  // Neutral
+  tagNeutralFontDisabled: themePrimitives.mono600,
+  tagNeutralOutlinedDisabled: themePrimitives.mono400,
+  tagNeutralSolidFont: themePrimitives.white,
+  tagNeutralSolidBackground: themePrimitives.black,
+  tagNeutralOutlinedBackground: themePrimitives.mono600,
+  tagNeutralOutlinedFont: themePrimitives.black,
+
+  // Primary
+  tagPrimaryFontDisabled: themePrimitives.primary400,
+  tagPrimaryOutlinedBackground: themePrimitives.primary400,
+  tagPrimaryOutlinedDisabled: themePrimitives.primary200,
+  tagPrimarySolidFont: themePrimitives.white,
+  tagPrimarySolidBackground: themePrimitives.primary,
+  tagPrimaryOutlinedFont: themePrimitives.primary,
+
+  // Accent
+  tagAccentFontDisabled: themePrimitives.accent200,
+  tagAccentOutlinedDisabled: themePrimitives.accent200,
+  tagAccentSolidFont: themePrimitives.white,
+  tagAccentSolidBackground: themePrimitives.accent400,
+  tagAccentOutlinedBackground: themePrimitives.accent200,
+  tagAccentOutlinedFont: themePrimitives.accent400,
+
+  // Positive
+  tagPositiveFontDisabled: themePrimitives.positive200,
+  tagPositiveOutlinedDisabled: themePrimitives.positive200,
+  tagPositiveSolidFont: themePrimitives.white,
+  tagPositiveSolidBackground: themePrimitives.positive400,
+  tagPositiveOutlinedBackground: themePrimitives.positive200,
+  tagPositiveOutlinedFont: themePrimitives.positive400,
+
+  // Warning
+  tagWarningFontDisabled: themePrimitives.warning300,
+  tagWarningOutlinedDisabled: themePrimitives.warning300,
+  tagWarningSolidFont: themePrimitives.warning700,
+  tagWarningSolidBackground: themePrimitives.warning400,
+  tagWarningOutlinedBackground: themePrimitives.warning300,
+  tagWarningOutlinedFont: themePrimitives.warning600,
+
+  // Negative
+  tagNegativeFontDisabled: themePrimitives.negative200,
+  tagNegativeOutlinedDisabled: themePrimitives.negative200,
+  tagNegativeSolidFont: themePrimitives.white,
+  tagNegativeSolidBackground: themePrimitives.negative400,
+  tagNegativeOutlinedBackground: themePrimitives.negative200,
+  tagNegativeOutlinedFont: themePrimitives.negative400,
+
+  // orange
+  tagOrangeOutlinedFont: colors.orange400,
+  tagOrangeOutlinedBackground: colors.orange200,
+  tagOrangeSolidFont: themePrimitives.white,
+  tagOrangeSolidBackground: colors.orange400,
+  tagOrangeFontDisabled: colors.orange200,
+  tagOrangeOutlinedDisabled: colors.orange200,
+
+  // purple
+  tagPurpleOutlinedFont: colors.purple400,
+  tagPurpleOutlinedBackground: colors.purple200,
+  tagPurpleSolidFont: themePrimitives.white,
+  tagPurpleSolidBackground: colors.purple400,
+  tagPurpleFontDisabled: colors.purple200,
+  tagPurpleOutlinedDisabled: colors.purple200,
+
+  // brown
+  tagBrownOutlinedFont: colors.brown400,
+  tagBrownOutlinedBackground: colors.brown200,
+  tagBrownSolidFont: themePrimitives.white,
+  tagBrownSolidBackground: colors.brown400,
+  tagBrownFontDisabled: colors.brown200,
+  tagBrownOutlinedDisabled: colors.brown200,
 });
