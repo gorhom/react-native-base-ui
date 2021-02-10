@@ -256,6 +256,77 @@ export interface ComponentColorTokens {
   inputEnhancerTextDisabled: string;
   inputPlaceholder: string;
   inputPlaceholderDisabled: string;
+
+  // tag
+  tagFontDisabledRampUnit: string;
+  tagOutlinedDisabledRampUnit: string;
+  tagSolidFontRampUnit: string;
+  tagSolidRampUnit: string;
+  tagOutlinedFontRampUnit: string;
+  tagOutlinedRampUnit: string;
+
+  tagNeutralSolidBackground: string;
+  tagNeutralSolidFont: string;
+  tagNeutralOutlinedBackground: string;
+  tagNeutralOutlinedDisabled: string;
+  tagNeutralOutlinedFont: string;
+  tagNeutralFontDisabled: string;
+
+  tagPrimarySolidBackground: string;
+  tagPrimarySolidFont: string;
+  tagPrimaryOutlinedBackground: string;
+  tagPrimaryOutlinedDisabled: string;
+  tagPrimaryOutlinedFont: string;
+  tagPrimaryFontDisabled: string;
+
+  tagAccentSolidBackground: string;
+  tagAccentSolidFont: string;
+  tagAccentOutlinedBackground: string;
+  tagAccentOutlinedDisabled: string;
+  tagAccentOutlinedFont: string;
+  tagAccentFontDisabled: string;
+
+  tagPositiveSolidBackground: string;
+  tagPositiveSolidFont: string;
+  tagPositiveOutlinedBackground: string;
+  tagPositiveOutlinedDisabled: string;
+  tagPositiveOutlinedFont: string;
+  tagPositiveFontDisabled: string;
+
+  tagWarningSolidBackground: string;
+  tagWarningSolidFont: string;
+  tagWarningOutlinedBackground: string;
+  tagWarningOutlinedDisabled: string;
+  tagWarningOutlinedFont: string;
+  tagWarningFontDisabled: string;
+
+  tagNegativeOutlinedFont: string;
+  tagNegativeOutlinedBackground: string;
+  tagNegativeSolidFont: string;
+  tagNegativeSolidBackground: string;
+  tagNegativeFontDisabled: string;
+  tagNegativeOutlinedDisabled: string;
+
+  tagOrangeOutlinedFont: string;
+  tagOrangeOutlinedBackground: string;
+  tagOrangeSolidFont: string;
+  tagOrangeSolidBackground: string;
+  tagOrangeFontDisabled: string;
+  tagOrangeOutlinedDisabled: string;
+
+  tagPurpleOutlinedFont: string;
+  tagPurpleOutlinedBackground: string;
+  tagPurpleSolidFont: string;
+  tagPurpleSolidBackground: string;
+  tagPurpleFontDisabled: string;
+  tagPurpleOutlinedDisabled: string;
+
+  tagBrownOutlinedFont: string;
+  tagBrownOutlinedBackground: string;
+  tagBrownSolidFont: string;
+  tagBrownSolidBackground: string;
+  tagBrownFontDisabled: string;
+  tagBrownOutlinedDisabled: string;
 }
 
 export interface FontTokens {

@@ -1,5 +1,5 @@
 ---
 to: ./src/<%=name%>/index.ts
 ---
-export { default } from './<%=Name%>';
+export { default as <%=Name%> } from './<%=Name%>';
 export { <%=name.toUpperCase()%>_TYPE } from './constants';

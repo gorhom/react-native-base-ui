@@ -23,3 +23,5 @@ export * from './components/enhancer';
 export * from './components/icon';
 export * from './components/input';
 export * from './components/typography';
+export * from './components/spinner';
+export * from './components/tag';
